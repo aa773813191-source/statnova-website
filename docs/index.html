@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="STATNOVA - Smart Statistical Analysis Platform for students and researchers worldwide.">
+<meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+<title>STATNOVA | Smart Statistical Analysis</title>
+
+<style>
+:root {
+  --navy:#102b50;
+  --blue:#1676b9;
+  --cyan:#54c5df;
+  --light:#eef8fc;
+  --white:#fff;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#263d53;
+  background:#f7fbfd;
+  line-height:1.7;
+}
+header {
+  background:white;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 12px #102b5010;
+}
+.logo {
+  color:var(--navy);
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.logo span {color:var(--cyan)}
+nav a {
+  text-decoration:none;
+  color:var(--navy);
+  margin:0 10px;
+  font-weight:bold;
+}
+button,.btn {
+  border:0;
+  border-radius:9px;
+  padding:12px 20px;
+  cursor:pointer;
+  font-weight:bold;
+  text-decoration:none;
+  display:inline-block;
+}
+.language {background:#e8f5fa;color:var(--navy)}
+.hero {
+  background:linear-gradient(130deg,#102b50,#176c9f,#168fb5);
+  color:white;
+  padding:100px 8%;
+  text-align:center;
+}
+.hero h1 {
+  font-size:clamp(42px,7vw,76px);
+  margin:10px 0;
+  letter-spacing:4px;
+}
+.hero p {
+  max-width:750px;
+  margin:15px auto;
+  font-size:19px;
+}
+.primary {background:var(--cyan);color:#102b50}
+.secondary {
+  border:1px solid white;
+  color:white;
+  margin-left:10px;
+  background:transparent;
+}
+section {padding:70px 8%}
+h2 {
+  color:var(--navy);
+  text-align:center;
+  font-size:32px;
+}
+.intro {
+  max-width:800px;
+  margin:15px auto 35px;
+  text-align:center;
+  color:#64778a;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
+}
+.card {
+  background:white;
+  padding:26px;
+  border-radius:15px;
+  border:1px solid #e1edf3;
+  box-shadow:0 8px 25px #102b5008;
+}
+.card h3 {color:var(--blue)}
+.icon {font-size:30px}
+.features {background:var(--light)}
+.about {
+  background:white;
+  text-align:center;
+}
+.about p {
+  max-width:800px;
+  margin:15px auto;
+}
+.cta {
+  background:linear-gradient(120deg,#eaf8fc,#f7fbfd);
+  text-align:center;
+}
+footer {
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:28px;
+}
+footer span {color:var(--cyan)}
+@media(max-width:650px) {
+  header {flex-direction:column;gap:15px}
+  nav {text-align:center}
+  nav a {display:inline-block;margin:5px}
+  .hero {padding:65px 6%}
+  section {padding:50px 6%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">STAT<span>NOVA</span></div>
+  <nav>
+    <a href="#about" data-en="About" data-ar="عن المنصة">About</a>
+    <a href="#features" data-en="Features" data-ar="المميزات">Features</a>
+    <a href="#developer" data-en="Developer" data-ar="المطوّرة">Developer</a>
+    <button class="language" onclick="toggleLanguage()">العربية</button>
+  </nav>
+</header>
+
+<div class="hero">
+  <p>SMART STATISTICAL ANALYSIS PLATFORM</p>
+  <h1>STATNOVA</h1>
+  <h2 style="color:#aeeafa" data-en="Turning Data into Research Insights."
+      data-ar="نحوّل البيانات إلى رؤى بحثية.">
+    Turning Data into Research Insights.
+  </h2>
+  <p data-en="An intelligent research workspace designed to support students and researchers in statistical analysis, data exploration, visualization and research reporting."
+     data-ar="مساحة بحثية ذكية لدعم الطلاب والباحثين في التحليل الإحصائي واستكشاف البيانات والتصورات البيانية وإعداد التقارير البحثية.">
+    An intelligent research workspace designed to support students and researchers in statistical analysis, data exploration, visualization and research reporting.
+  </p>
+  <br>
+  <a class="btn primary"
+     href="https://statnova-amatalelah2.streamlit.app/"
+     target="_blank"
+     rel="noopener"
+     data-en="OPEN STATNOVA"
+     data-ar="افتح منصة STATNOVA">
+     OPEN STATNOVA
+  </a>
+  <a class="btn secondary" href="#features"
+     data-en="EXPLORE FEATURES"
+     data-ar="اكتشف المميزات">
+     EXPLORE FEATURES
+  </a>
+</div>
+
+<section id="about">
+  <h2 data-en="About STATNOVA" data-ar="عن STATNOVA">About STATNOVA</h2>
+  <p class="intro"
+     data-en="STATNOVA is a research-focused statistical analysis platform that brings essential data analysis tools and reporting workflows together in one accessible environment."
+     data-ar="STATNOVA منصة للتحليل الإحصائي الموجّه للأبحاث، تجمع أدوات تحليل البيانات الأساسية ومسارات إعداد التقارير في بيئة واحدة سهلة الوصول.">
+    STATNOVA is a research-focused statistical analysis platform that brings essential data analysis tools and reporting workflows together in one accessible environment.
+  </p>
+</section>
+
+<section class="features" id="features">
+  <h2 data-en="Platform Features" data-ar="مميزات المنصة">Platform Features</h2>
+  <p class="intro"
+     data-en="Tools designed to support the research journey."
+     data-ar="أدوات صُممت لدعم رحلة البحث العلمي.">
+    Tools designed to support the research journey.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3 data-en="Data Exploration" data-ar="استكشاف البيانات">Data Exploration</h3>
+      <p data-en="Upload datasets and explore variables and data quality."
+         data-ar="ارفع ملفات البيانات واستكشف المتغيرات وجودة البيانات.">
+        Upload datasets and explore variables and data quality.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">∑</div>
+      <h3 data-en="Statistical Analysis" data-ar="التحليل الإحصائي">Statistical Analysis</h3>
+      <p data-en="Descriptive statistics and supported statistical tests."
+         data-ar="الإحصاءات الوصفية والاختبارات الإحصائية المدعومة.">
+        Descriptive statistics and supported statistical tests.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✦</div>
+      <h3 data-en="Smart Research Analyzer" data-ar="المحلل البحثي الذكي">Smart Research Analyzer</h3>
+      <p data-en="Research-oriented analysis and guided interpretation of results."
+         data-ar="تحليل موجّه للأبحاث وتفسير إرشادي للنتائج.">
+        Research-oriented analysis and guided interpretation of results.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3 data-en="Visualizations" data-ar="التصورات البيانية">Visualizations</h3>
+      <p data-en="Visual summaries and charts to explore research findings."
+         data-ar="ملخصات مرئية ورسوم بيانية لاستكشاف النتائج البحثية.">
+        Visual summaries and charts to explore research findings.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📄</div>
+      <h3 data-en="Research Reports" data-ar="التقارير البحثية">Research Reports</h3>
+      <p data-en="Prepare research reports in Word and PDF formats."
+         data-ar="إعداد تقارير بحثية بصيغتي Word وPDF.">
+        Prepare research reports in Word and PDF formats.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔬</div>
+      <h3 data-en="Research Support" data-ar="دعم البحث العلمي">Research Support</h3>
+      <p data-en="Tools for students, researchers and academic projects."
+         data-ar="أدوات للطلاب والباحثين والمشاريع الأكاديمية.">
+        Tools for students, researchers and academic projects.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="developer">
+  <h2 data-en="About the Developer" data-ar="عن المطوّرة">About the Developer</h2>
+  <h3 style="color:#1676b9">
+    Amatalelah Abdulazez Mashhor Al-Ahdel
+  </h3>
+  <p data-en="PLATFORM DEVELOPER"
+     data-ar="مطوّرة المنصة">
+     PLATFORM DEVELOPER
+  </p>
+  <p data-en="Developing research-oriented digital tools to support statistical analysis and scientific work."
+     data-ar="تطوير أدوات رقمية بحثية لدعم التحليل الإحصائي والعمل العلمي.">
+    Developing research-oriented digital tools to support statistical analysis and scientific work.
+  </p>
+</section>
+
+<section class="cta">
+  <h2 data-en="Start Your Research Journey"
+      data-ar="ابدأ رحلتك البحثية">
+      Start Your Research Journey
+  </h2>
+  <p data-en="Explore STATNOVA and discover its research tools."
+     data-ar="استكشف STATNOVA وتعرّف على أدواتها البحثية.">
+     Explore STATNOVA and discover its research tools.
+  </p>
+  <a class="btn primary"
+     href="https://statnova-amatalelah2.streamlit.app/"
+     target="_blank"
+     rel="noopener"
+     data-en="VISIT THE PLATFORM"
+     data-ar="زيارة المنصة">
+     VISIT THE PLATFORM
+  </a>
+</section>
+
+<footer>
+  © <span id="year"></span> STATNOVA |
+  <span data-en="Turning Data into Research Insights."
+        data-ar="نحوّل البيانات إلى رؤى بحثية.">
+    Turning Data into Research Insights.
+  </span>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+let currentLanguage = "en";
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === "en" ? "ar" : "en";
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir =
+    currentLanguage === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-en][data-ar]").forEach(element => {
+    element.textContent = element.dataset[currentLanguage];
+  });
+
+  document.querySelector(".language").textContent =
+    currentLanguage === "en" ? "العربية" : "English";
+}
+</script>
+
+</body>
+  </html>
+  
