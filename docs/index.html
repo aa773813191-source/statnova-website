@@ -4,10 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="description" content="STATNOVA - Smart Statistical Analysis Platform for students and researchers worldwide.">
 <meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
-
 <meta name="google-site-verification" content="U-x9JHMflaqEBaQH0DuEehuwFm8_VLvRNxCMTKzlh2Y">
 
 <title>STATNOVA | منصة التحليل الإحصائي الذكي</title>
@@ -53,10 +51,18 @@ header {
   color:var(--cyan);
 }
 
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
 nav a {
   text-decoration:none;
   color:var(--navy);
-  margin:0 10px;
+  margin:0 5px;
   font-weight:bold;
 }
 
@@ -88,6 +94,10 @@ button,.btn {
   letter-spacing:4px;
 }
 
+.hero h2 {
+  color:#aeeafa;
+}
+
 .hero p {
   max-width:750px;
   margin:15px auto;
@@ -102,8 +112,28 @@ button,.btn {
 .secondary {
   border:1px solid white;
   color:white;
-  margin-inline-start:10px;
   background:transparent;
+}
+
+/* تحسين المسافة والمحاذاة بين زري الواجهة */
+.hero-actions {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:28px;
+}
+
+.hero-actions .btn {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-width:190px;
+  min-height:48px;
+  padding:13px 22px;
+  text-align:center;
+  white-space:normal;
 }
 
 section {
@@ -194,6 +224,16 @@ footer span {
     padding:65px 6%;
   }
 
+  .hero-actions {
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .hero-actions .btn {
+    width:min(100%,280px);
+    margin:0;
+  }
+
   section {
     padding:50px 6%;
   }
@@ -207,18 +247,9 @@ footer span {
   <div class="logo">STAT<span>NOVA</span></div>
 
   <nav>
-    <a href="#about"
-       data-en="About"
-       data-ar="عن المنصة">عن المنصة</a>
-
-    <a href="#features"
-       data-en="Features"
-       data-ar="المميزات">المميزات</a>
-
-    <a href="#developer"
-       data-en="Developer"
-       data-ar="المطوّرة">المطوّرة</a>
-
+    <a href="#about" data-en="About" data-ar="عن المنصة">عن المنصة</a>
+    <a href="#features" data-en="Features" data-ar="المميزات">المميزات</a>
+    <a href="#developer" data-en="Developer" data-ar="المطوّرة">المطوّرة</a>
     <button class="language" onclick="toggleLanguage()">English</button>
   </nav>
 </header>
@@ -232,8 +263,7 @@ footer span {
 
   <h1>STATNOVA</h1>
 
-  <h2 style="color:#aeeafa"
-      data-en="Turning Data into Research Insights."
+  <h2 data-en="Turning Data into Research Insights."
       data-ar="تحويل البيانات إلى رؤى بحثية.">
       تحويل البيانات إلى رؤى بحثية.
   </h2>
@@ -243,32 +273,30 @@ footer span {
      مساحة عمل بحثية ذكية مصممة لدعم الطلاب والباحثين في التحليل الإحصائي واستكشاف البيانات وتصورها وإعداد التقارير البحثية.
   </p>
 
-  <br>
+  <div class="hero-actions">
+    <a class="btn primary"
+       href="https://statnova-amatalelah2.streamlit.app/"
+       target="_blank"
+       rel="noopener"
+       data-en="OPEN STATNOVA"
+       data-ar="افتح منصة STATNOVA">
+       افتح منصة STATNOVA
+    </a>
 
-  <a class="btn primary"
-     href="https://statnova-amatalelah2.streamlit.app/"
-     target="_blank"
-     rel="noopener"
-     data-en="OPEN STATNOVA"
-     data-ar="افتح منصة STATNOVA">
-     افتح منصة STATNOVA
-  </a>
-
-  <a class="btn secondary"
-     href="#features"
-     data-en="EXPLORE FEATURES"
-     data-ar="استكشف المميزات">
-     استكشف المميزات
-  </a>
+    <a class="btn secondary"
+       href="#features"
+       data-en="EXPLORE FEATURES"
+       data-ar="استكشف المميزات">
+       استكشف المميزات
+    </a>
+  </div>
 
 </div>
 
 <section id="about">
 
   <h2 data-en="About STATNOVA"
-      data-ar="عن STATNOVA">
-      عن STATNOVA
-  </h2>
+      data-ar="عن STATNOVA">عن STATNOVA</h2>
 
   <p class="intro"
      data-en="STATNOVA is a research-focused statistical analysis platform that brings essential data analysis tools and research reporting workflows together in one accessible digital environment."
@@ -281,9 +309,7 @@ footer span {
 <section class="features" id="features">
 
   <h2 data-en="Platform Features"
-      data-ar="مميزات المنصة">
-      مميزات المنصة
-  </h2>
+      data-ar="مميزات المنصة">مميزات المنصة</h2>
 
   <p class="intro"
      data-en="Integrated tools designed to support every stage of the research journey."
@@ -295,12 +321,7 @@ footer span {
 
     <div class="card">
       <div class="icon">📊</div>
-
-      <h3 data-en="Data Exploration"
-          data-ar="استكشاف البيانات">
-          استكشاف البيانات
-      </h3>
-
+      <h3 data-en="Data Exploration" data-ar="استكشاف البيانات">استكشاف البيانات</h3>
       <p data-en="Upload datasets and explore variables, structures and data quality."
          data-ar="ارفع ملفات البيانات واستكشف المتغيرات وبنية البيانات ومستوى جودتها.">
          ارفع ملفات البيانات واستكشف المتغيرات وبنية البيانات ومستوى جودتها.
@@ -309,12 +330,7 @@ footer span {
 
     <div class="card">
       <div class="icon">∑</div>
-
-      <h3 data-en="Statistical Analysis"
-          data-ar="التحليل الإحصائي">
-          التحليل الإحصائي
-      </h3>
-
+      <h3 data-en="Statistical Analysis" data-ar="التحليل الإحصائي">التحليل الإحصائي</h3>
       <p data-en="Descriptive statistics and supported statistical tests."
          data-ar="الإحصاءات الوصفية والاختبارات الإحصائية التي تدعمها المنصة.">
          الإحصاءات الوصفية والاختبارات الإحصائية التي تدعمها المنصة.
@@ -323,12 +339,7 @@ footer span {
 
     <div class="card">
       <div class="icon">✦</div>
-
-      <h3 data-en="Smart Research Analyzer"
-          data-ar="المحلل البحثي الذكي">
-          المحلل البحثي الذكي
-      </h3>
-
+      <h3 data-en="Smart Research Analyzer" data-ar="المحلل البحثي الذكي">المحلل البحثي الذكي</h3>
       <p data-en="Research-oriented analysis and guided interpretation of results."
          data-ar="تحليل موجّه للأبحاث وتفسير إرشادي للنتائج الإحصائية.">
          تحليل موجّه للأبحاث وتفسير إرشادي للنتائج الإحصائية.
@@ -337,12 +348,7 @@ footer span {
 
     <div class="card">
       <div class="icon">📈</div>
-
-      <h3 data-en="Visualizations"
-          data-ar="التصورات البيانية">
-          التصورات البيانية
-      </h3>
-
+      <h3 data-en="Visualizations" data-ar="التصورات البيانية">التصورات البيانية</h3>
       <p data-en="Visual summaries and charts to explore research findings."
          data-ar="ملخصات مرئية ورسوم بيانية تساعد على استكشاف النتائج البحثية.">
          ملخصات مرئية ورسوم بيانية تساعد على استكشاف النتائج البحثية.
@@ -351,12 +357,7 @@ footer span {
 
     <div class="card">
       <div class="icon">📄</div>
-
-      <h3 data-en="Research Reports"
-          data-ar="التقارير البحثية">
-          التقارير البحثية
-      </h3>
-
+      <h3 data-en="Research Reports" data-ar="التقارير البحثية">التقارير البحثية</h3>
       <p data-en="Prepare research reports in Word and PDF formats."
          data-ar="إعداد تقارير بحثية بصيغتي Word وPDF.">
          إعداد تقارير بحثية بصيغتي Word وPDF.
@@ -365,12 +366,7 @@ footer span {
 
     <div class="card">
       <div class="icon">🔬</div>
-
-      <h3 data-en="Research Support"
-          data-ar="دعم البحث العلمي">
-          دعم البحث العلمي
-      </h3>
-
+      <h3 data-en="Research Support" data-ar="دعم البحث العلمي">دعم البحث العلمي</h3>
       <p data-en="Digital tools for students, researchers and academic projects."
          data-ar="أدوات رقمية لدعم الطلاب والباحثين والمشاريع الأكاديمية.">
          أدوات رقمية لدعم الطلاب والباحثين والمشاريع الأكاديمية.
@@ -383,9 +379,7 @@ footer span {
 <section class="about" id="developer">
 
   <h2 data-en="About the Developer"
-      data-ar="عن المطوّرة">
-      عن المطوّرة
-  </h2>
+      data-ar="عن المطوّرة">عن المطوّرة</h2>
 
   <h3 style="color:#1676b9"
       data-en="Amatalelah Abdulazez Mashhor Al-Ahdel"
@@ -408,9 +402,7 @@ footer span {
 <section class="cta">
 
   <h2 data-en="Start Your Research Journey"
-      data-ar="ابدأ رحلتك البحثية">
-      ابدأ رحلتك البحثية
-  </h2>
+      data-ar="ابدأ رحلتك البحثية">ابدأ رحلتك البحثية</h2>
 
   <p data-en="Explore STATNOVA and discover its research tools."
      data-ar="استكشف STATNOVA وتعرّف على أدواتها البحثية.">
@@ -430,7 +422,6 @@ footer span {
 
 <footer>
   © <span id="year"></span> STATNOVA |
-
   <span data-en="Turning Data into Research Insights."
         data-ar="تحويل البيانات إلى رؤى بحثية.">
         تحويل البيانات إلى رؤى بحثية.
@@ -444,11 +435,9 @@ document.getElementById("year").textContent =
 let currentLanguage = "ar";
 
 function toggleLanguage() {
-
   currentLanguage = currentLanguage === "ar" ? "en" : "ar";
 
   document.documentElement.lang = currentLanguage;
-
   document.documentElement.dir =
     currentLanguage === "ar" ? "rtl" : "ltr";
 
@@ -463,4 +452,4 @@ function toggleLanguage() {
 
 </body>
   </html>
-        
+  
