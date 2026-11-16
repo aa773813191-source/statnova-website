@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" translate="no" class="notranslate">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="google" content="notranslate">
 <meta name="description" content="STATNOVA - Smart Statistical Analysis Platform for students and researchers worldwide.">
 <meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
 <meta name="google-site-verification" content="U-x9JHMflaqEBaQH0DuEehuwFm8_VLvRNxCMTKzlh2Y">
@@ -206,9 +207,7 @@ h2.section-title {
 
 .icon { font-size:30px; }
 
-.features {
-  background:var(--light);
-}
+.features { background:var(--light); }
 
 .about {
   background:white;
@@ -437,6 +436,7 @@ html[dir="rtl"] .intro {
   </p>
 
   <div class="grid">
+
     <div class="card">
       <div class="icon">📊</div>
       <h3 data-en="Data Exploration" data-ar="استكشاف البيانات">Data Exploration</h3>
@@ -490,6 +490,7 @@ html[dir="rtl"] .intro {
         Tools for students, researchers and academic projects.
       </p>
     </div>
+
   </div>
 </section>
 
@@ -598,27 +599,27 @@ html[dir="rtl"] .intro {
 <script>
 "use strict";
 
-// Update copyright year
+// Copyright year
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-// Language switching function
-function setLanguage(language) {
-  const selectedLanguage = language === "ar" ? "ar" : "en";
-  const isArabic = selectedLanguage === "ar";
+// Language buttons
+const englishButton = document.getElementById("englishButton");
+const arabicButton = document.getElementById("arabicButton");
 
-  // Update page direction and language
+// Language switching
+function setLanguage(language) {
+  const isArabic = language === "ar";
+  const selectedLanguage = isArabic ? "ar" : "en";
+
   document.documentElement.lang = selectedLanguage;
   document.documentElement.dir = isArabic ? "rtl" : "ltr";
 
-  // Update all bilingual elements
   document.querySelectorAll("[data-en][data-ar]").forEach(element => {
-    element.textContent = element.getAttribute("data-" + selectedLanguage);
+    element.textContent = element.getAttribute(
+      isArabic ? "data-ar" : "data-en"
+    );
   });
-
-  // Update language buttons
-  const englishButton = document.getElementById("englishButton");
-  const arabicButton = document.getElementById("arabicButton");
 
   englishButton.classList.toggle("active", !isArabic);
   arabicButton.classList.toggle("active", isArabic);
@@ -626,25 +627,19 @@ function setLanguage(language) {
   englishButton.setAttribute("aria-pressed", String(!isArabic));
   arabicButton.setAttribute("aria-pressed", String(isArabic));
 
-  // Update browser tab title
   document.title = isArabic
     ? "STATNOVA | منصة التحليل الإحصائي الذكي"
     : "STATNOVA | Smart Statistical Analysis";
 }
 
-// Attach click events after the page elements are available
-document.getElementById("englishButton").addEventListener("click", function() {
-  setLanguage("en");
-});
+// Button events
+englishButton.addEventListener("click", () => setLanguage("en"));
+arabicButton.addEventListener("click", () => setLanguage("ar"));
 
-document.getElementById("arabicButton").addEventListener("click", function() {
-  setLanguage("ar");
-});
-
-// Make the English version the default language
+// Default language
 setLanguage("en");
 </script>
 
 </body>
   </html>
-      
+  
