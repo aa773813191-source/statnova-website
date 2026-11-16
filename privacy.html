@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<meta name="theme-color" content="#102b50">
+<title>STATNOVA | Privacy Policy</title>
+
+<style>
+:root {
+  --navy:#102b50;
+  --blue:#1676b9;
+  --cyan:#54c5df;
+  --light:#eef8fc;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7fbfd;
+  color:#263d53;
+  line-height:1.9;
+}
+header,footer {
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:25px 6%;
+}
+.logo {
+  font-size:29px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+.logo span { color:var(--cyan); }
+.language {
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:15px;
+}
+button {
+  border:0;
+  border-radius:8px;
+  padding:10px 20px;
+  background:var(--light);
+  color:var(--navy);
+  font-weight:bold;
+  cursor:pointer;
+}
+button.active {
+  background:var(--cyan);
+}
+main {
+  max-width:900px;
+  margin:35px auto;
+  padding:35px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 5px 25px #102b5010;
+}
+h1,h2 { color:var(--navy); }
+h1 { text-align:center; }
+h2 { color:var(--blue); margin-top:30px; }
+.home {
+  display:inline-block;
+  background:var(--navy);
+  color:white;
+  padding:10px 20px;
+  border-radius:8px;
+  margin-top:20px;
+}
+footer { font-size:14px; }
+@media(max-width:600px) {
+  main { margin:15px; padding:22px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">STAT<span>NOVA</span></div>
+  <div class="language">
+    <button id="enBtn" class="active">English</button>
+    <button id="arBtn">العربية</button>
+  </div>
+</header>
+
+<main>
+  <h1 id="pageTitle">Privacy Policy</h1>
+
+  <p id="intro">
+    STATNOVA respects user privacy and is committed to explaining
+    how information may be handled when using the platform.
+  </p>
+
+  <h2 id="s1Title">1. Information</h2>
+  <p id="s1">
+    Information entered or uploaded by users may be processed
+    to provide the requested statistical analysis services.
+  </p>
+
+  <h2 id="s2Title">2. Uploaded Data</h2>
+  <p id="s2">
+    Users should avoid uploading personal, confidential,
+    or sensitive information unless they have the necessary
+    authorization. Data handling depends on the services
+    and hosting providers used by STATNOVA.
+  </p>
+
+  <h2 id="s3Title">3. Use of Information</h2>
+  <p id="s3">
+    Information may be used to operate, maintain, improve,
+    and secure the platform and its services.
+  </p>
+
+  <h2 id="s4Title">4. Third-Party Services</h2>
+  <p id="s4">
+    STATNOVA may rely on third-party hosting and technical
+    services. Those providers may process information
+    according to their own privacy policies.
+  </p>
+
+  <h2 id="s5Title">5. Data Security</h2>
+  <p id="s5">
+    Reasonable technical measures are intended to protect
+    information. However, no online service can guarantee
+    absolute security.
+  </p>
+
+  <h2 id="s6Title">6. Contact</h2>
+  <p id="s6">
+    For privacy questions, contact:
+    supportstatnova@gmail.com
+  </p>
+
+  <a class="home" href="index.html" id="homeBtn">Back to Home</a>
+</main>
+
+<footer>
+  STATNOVA © 2026
+  <p>Amatalelah Abdulazez Mashhor Al-Ahdel</p>
+</footer>
+
+<script>
+const translations = {
+en: {
+title:"Privacy Policy",
+intro:"STATNOVA respects user privacy and is committed to explaining how information may be handled when using the platform.",
+s1Title:"1. Information",
+s1:"Information entered or uploaded by users may be processed to provide the requested statistical analysis services.",
+s2Title:"2. Uploaded Data",
+s2:"Users should avoid uploading personal, confidential, or sensitive information unless they have the necessary authorization. Data handling depends on the services and hosting providers used by STATNOVA.",
+s3Title:"3. Use of Information",
+s3:"Information may be used to operate, maintain, improve, and secure the platform and its services.",
+s4Title:"4. Third-Party Services",
+s4:"STATNOVA may rely on third-party hosting and technical services. Those providers may process information according to their own privacy policies.",
+s5Title:"5. Data Security",
+s5:"Reasonable technical measures are intended to protect information. However, no online service can guarantee absolute security.",
+s6Title:"6. Contact",
+s6:"For privacy questions, contact: supportstatnova@gmail.com",
+home:"Back to Home"
+},
+ar: {
+title:"سياسة الخصوصية",
+intro:"تحترم STATNOVA خصوصية المستخدمين، وتسعى إلى توضيح كيفية التعامل مع المعلومات عند استخدام المنصة.",
+s1Title:"1. المعلومات",
+s1:"قد تتم معالجة المعلومات التي يدخلها المستخدم أو يرفعها لتقديم خدمات التحليل الإحصائي المطلوبة.",
+s2Title:"2. البيانات المرفوعة",
+s2:"يُرجى تجنب رفع المعلومات الشخصية أو السرية أو الحساسة ما لم تتوفر الصلاحية اللازمة. وتعتمد كيفية التعامل مع البيانات على الخدمات ومزودي الاستضافة الذين تستخدمهم STATNOVA.",
+s3Title:"3. استخدام المعلومات",
+s3:"قد تُستخدم المعلومات لتشغيل المنصة وصيانتها وتحسين خدماتها وحمايتها.",
+s4Title:"4. خدمات الجهات الخارجية",
+s4:"قد تعتمد STATNOVA على خدمات استضافة وخدمات تقنية تابعة لجهات خارجية، وقد تتعامل تلك الجهات مع المعلومات وفق سياسات الخصوصية الخاصة بها.",
+s5Title:"5. أمن البيانات",
+s5:"نسعى إلى استخدام تدابير تقنية معقولة لحماية المعلومات، لكن لا يمكن لأي خدمة عبر الإنترنت ضمان الأمان المطلق.",
+s6Title:"6. التواصل",
+s6:"للاستفسارات المتعلقة بالخصوصية، تواصلوا عبر: supportstatnova@gmail.com",
+home:"العودة إلى الرئيسية"
+}
+};
+
+function setLanguage(lang) {
+const t = translations[lang];
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+Object.keys(t).forEach(key => {
+const element = document.getElementById(key === "title" ? "pageTitle" :
+key === "home" ? "homeBtn" : key);
+if(element) element.textContent = t[key];
+});
+document.getElementById("enBtn").classList.toggle("active",lang==="en");
+document.getElementById("arBtn").classList.toggle("active",lang==="ar");
+document.title = "STATNOVA | " + t.title;
+}
+document.getElementById("enBtn").onclick = () => setLanguage("en");
+document.getElementById("arBtn").onclick = () => setLanguage("ar");
+setLanguage("en");
+</script>
+
+</body>
+  </html>
+  
