@@ -8,7 +8,6 @@
 <meta name="description" content="STATNOVA - Smart Statistical Analysis Platform for students and researchers worldwide.">
 <meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
 <meta name="google-site-verification" content="U-x9JHMflaqEBaQH0DuEehuwFm8_VLvRNxCMTKzlh2Y">
-
 <meta name="theme-color" content="#102b50">
 
 <title>STATNOVA | Smart Statistical Analysis</title>
@@ -23,13 +22,9 @@
   --text:#263d53;
 }
 
-* {
-  box-sizing:border-box;
-}
+* { box-sizing:border-box; }
 
-html {
-  scroll-behavior:smooth;
-}
+html { scroll-behavior:smooth; }
 
 body {
   margin:0;
@@ -39,9 +34,7 @@ body {
   line-height:1.7;
 }
 
-a {
-  text-decoration:none;
-}
+a { text-decoration:none; }
 
 header {
   background:white;
@@ -62,9 +55,7 @@ header {
   white-space:nowrap;
 }
 
-.logo span {
-  color:var(--cyan);
-}
+.logo span { color:var(--cyan); }
 
 .header-right {
   display:flex;
@@ -88,13 +79,11 @@ nav a {
   transition:.2s;
 }
 
-nav a:hover {
-  color:var(--blue);
-}
+nav a:hover { color:var(--blue); }
 
 .language-buttons {
   display:flex;
-  gap:10px;
+  gap:12px;
   align-items:center;
   justify-content:center;
 }
@@ -118,6 +107,7 @@ button:hover,.btn:hover {
   background:#e8f5fa;
   color:var(--navy);
   border:1px solid #d5eaf2;
+  min-width:105px;
 }
 
 .language.active {
@@ -161,7 +151,7 @@ button:hover,.btn:hover {
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  gap:14px;
+  gap:16px;
   margin-top:30px;
 }
 
@@ -176,9 +166,7 @@ button:hover,.btn:hover {
   background:transparent;
 }
 
-section {
-  padding:70px 8%;
-}
+section { padding:70px 8%; }
 
 h2.section-title {
   color:var(--navy);
@@ -214,13 +202,9 @@ h2.section-title {
   box-shadow:0 12px 28px #102b5015;
 }
 
-.card h3 {
-  color:var(--blue);
-}
+.card h3 { color:var(--blue); }
 
-.icon {
-  font-size:30px;
-}
+.icon { font-size:30px; }
 
 .features {
   background:var(--light);
@@ -264,9 +248,7 @@ footer {
   padding:28px 6%;
 }
 
-footer span {
-  color:var(--cyan);
-}
+footer span { color:var(--cyan); }
 
 .footer-links {
   display:flex;
@@ -276,34 +258,37 @@ footer span {
   margin:14px 0;
 }
 
-.footer-links a {
-  color:white;
-}
+.footer-links a { color:white; }
 
-.footer-links a:hover {
-  color:var(--cyan);
-}
+.footer-links a:hover { color:var(--cyan); }
 
 footer .copyright {
   font-size:13px;
   color:#d6e6f0;
 }
 
-[dir="rtl"] body {
+/* Arabic layout */
+html[dir="rtl"] body {
   text-align:right;
 }
 
-[dir="rtl"] .hero,
-[dir="rtl"] .about,
-[dir="rtl"] .cta,
-[dir="rtl"] .contact,
-[dir="rtl"] footer,
-[dir="rtl"] .features {
-  text-align:center;
+html[dir="rtl"] header,
+html[dir="rtl"] .header-right,
+html[dir="rtl"] nav,
+html[dir="rtl"] .language-buttons,
+html[dir="rtl"] .hero-actions,
+html[dir="rtl"] .footer-links {
+  direction:rtl;
 }
 
-[dir="rtl"] .logo {
-  letter-spacing:1px;
+html[dir="rtl"] .hero,
+html[dir="rtl"] .about,
+html[dir="rtl"] .cta,
+html[dir="rtl"] .contact,
+html[dir="rtl"] footer,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .intro {
+  text-align:center;
 }
 
 @media(max-width:700px) {
@@ -316,28 +301,18 @@ footer .copyright {
   .header-right {
     width:100%;
     flex-direction:column;
-    gap:14px;
+    gap:16px;
   }
 
-  nav {
-    gap:14px;
-  }
+  nav { gap:14px; }
 
-  nav a {
-    font-size:14px;
-  }
+  nav a { font-size:14px; }
 
-  .language-buttons {
-    gap:12px;
-  }
+  .language-buttons { gap:12px; }
 
-  .hero {
-    padding:65px 6%;
-  }
+  .hero { padding:65px 6%; }
 
-  .hero p {
-    font-size:16px;
-  }
+  .hero p { font-size:16px; }
 
   .hero-actions {
     flex-direction:column;
@@ -350,21 +325,13 @@ footer .copyright {
     text-align:center;
   }
 
-  section {
-    padding:50px 6%;
-  }
+  section { padding:50px 6%; }
 
-  h2.section-title {
-    font-size:27px;
-  }
+  h2.section-title { font-size:27px; }
 
-  .grid {
-    grid-template-columns:1fr;
-  }
+  .grid { grid-template-columns:1fr; }
 
-  .card {
-    padding:22px;
-  }
+  .card { padding:22px; }
 
   .developer-name {
     font-size:18px;
@@ -373,13 +340,8 @@ footer .copyright {
 }
 
 @media(min-width:701px) and (max-width:950px) {
-  header {
-    justify-content:center;
-  }
-
-  .grid {
-    grid-template-columns:repeat(2,1fr);
-  }
+  header { justify-content:center; }
+  .grid { grid-template-columns:repeat(2,1fr); }
 }
 </style>
 </head>
@@ -387,48 +349,29 @@ footer .copyright {
 <body>
 
 <header>
-
   <div class="logo">STAT<span>NOVA</span></div>
 
   <div class="header-right">
-
     <nav>
-      <a href="#about"
-         data-en="About"
-         data-ar="عن المنصة">About</a>
-
-      <a href="#features"
-         data-en="Features"
-         data-ar="المميزات">Features</a>
-
-      <a href="#developer"
-         data-en="Developer"
-         data-ar="المطوّرة">Developer</a>
-
-      <a href="#contact"
-         data-en="Contact"
-         data-ar="تواصل معنا">Contact</a>
+      <a href="#about" data-en="About" data-ar="عن المنصة">About</a>
+      <a href="#features" data-en="Features" data-ar="المميزات">Features</a>
+      <a href="#developer" data-en="Developer" data-ar="المطوّرة">Developer</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
     </nav>
 
     <div class="language-buttons">
-      <button class="language active"
-              id="englishButton"
-              onclick="setLanguage('en')">
+      <button type="button" class="language active" id="englishButton" aria-pressed="true">
         English
       </button>
 
-      <button class="language"
-              id="arabicButton"
-              onclick="setLanguage('ar')">
+      <button type="button" class="language" id="arabicButton" aria-pressed="false">
         العربية
       </button>
     </div>
-
   </div>
 </header>
 
 <div class="hero">
-
   <p class="eyebrow"
      data-en="SMART STATISTICAL ANALYSIS PLATFORM"
      data-ar="منصة التحليل الإحصائي الذكي">
@@ -448,7 +391,6 @@ footer .copyright {
   </p>
 
   <div class="hero-actions">
-
     <a class="btn primary"
        href="https://statnova-amatalelah2.streamlit.app/"
        target="_blank"
@@ -464,12 +406,10 @@ footer .copyright {
        data-ar="اكتشف المميزات">
       EXPLORE FEATURES
     </a>
-
   </div>
 </div>
 
 <section id="about">
-
   <h2 class="section-title"
       data-en="About STATNOVA"
       data-ar="عن STATNOVA">
@@ -481,11 +421,9 @@ footer .copyright {
      data-ar="STATNOVA منصة للتحليل الإحصائي الموجّه للأبحاث، تجمع أدوات تحليل البيانات ومسارات إعداد التقارير في بيئة واحدة سهلة الوصول.">
     STATNOVA is a research-focused statistical analysis platform that brings essential data analysis tools and reporting workflows together in one accessible environment.
   </p>
-
 </section>
 
 <section class="features" id="features">
-
   <h2 class="section-title"
       data-en="Platform Features"
       data-ar="مميزات المنصة">
@@ -499,13 +437,9 @@ footer .copyright {
   </p>
 
   <div class="grid">
-
     <div class="card">
       <div class="icon">📊</div>
-      <h3 data-en="Data Exploration"
-          data-ar="استكشاف البيانات">
-        Data Exploration
-      </h3>
+      <h3 data-en="Data Exploration" data-ar="استكشاف البيانات">Data Exploration</h3>
       <p data-en="Upload datasets and explore variables and data quality."
          data-ar="ارفع ملفات البيانات واستكشف المتغيرات وجودة البيانات.">
         Upload datasets and explore variables and data quality.
@@ -514,10 +448,7 @@ footer .copyright {
 
     <div class="card">
       <div class="icon">∑</div>
-      <h3 data-en="Statistical Analysis"
-          data-ar="التحليل الإحصائي">
-        Statistical Analysis
-      </h3>
+      <h3 data-en="Statistical Analysis" data-ar="التحليل الإحصائي">Statistical Analysis</h3>
       <p data-en="Descriptive statistics and supported statistical tests."
          data-ar="الإحصاءات الوصفية والاختبارات الإحصائية المدعومة.">
         Descriptive statistics and supported statistical tests.
@@ -526,10 +457,7 @@ footer .copyright {
 
     <div class="card">
       <div class="icon">✦</div>
-      <h3 data-en="Smart Research Analyzer"
-          data-ar="المحلل البحثي الذكي">
-        Smart Research Analyzer
-      </h3>
+      <h3 data-en="Smart Research Analyzer" data-ar="المحلل البحثي الذكي">Smart Research Analyzer</h3>
       <p data-en="Research-oriented analysis and guided interpretation of results."
          data-ar="تحليل موجّه للأبحاث وتفسير إرشادي للنتائج.">
         Research-oriented analysis and guided interpretation of results.
@@ -538,10 +466,7 @@ footer .copyright {
 
     <div class="card">
       <div class="icon">📈</div>
-      <h3 data-en="Visualizations"
-          data-ar="التصورات البيانية">
-        Visualizations
-      </h3>
+      <h3 data-en="Visualizations" data-ar="التصورات البيانية">Visualizations</h3>
       <p data-en="Visual summaries and charts to explore research findings."
          data-ar="ملخصات مرئية ورسوم بيانية لاستكشاف النتائج البحثية.">
         Visual summaries and charts to explore research findings.
@@ -550,10 +475,7 @@ footer .copyright {
 
     <div class="card">
       <div class="icon">📄</div>
-      <h3 data-en="Research Reports"
-          data-ar="التقارير البحثية">
-        Research Reports
-      </h3>
+      <h3 data-en="Research Reports" data-ar="التقارير البحثية">Research Reports</h3>
       <p data-en="Prepare research reports in Word and PDF formats."
          data-ar="إعداد تقارير بحثية بصيغتي Word وPDF.">
         Prepare research reports in Word and PDF formats.
@@ -562,33 +484,29 @@ footer .copyright {
 
     <div class="card">
       <div class="icon">🔬</div>
-      <h3 data-en="Research Support"
-          data-ar="دعم البحث العلمي">
-        Research Support
-      </h3>
+      <h3 data-en="Research Support" data-ar="دعم البحث العلمي">Research Support</h3>
       <p data-en="Tools for students, researchers and academic projects."
          data-ar="أدوات للطلاب والباحثين والمشاريع الأكاديمية.">
         Tools for students, researchers and academic projects.
       </p>
     </div>
-
   </div>
 </section>
 
 <section class="about" id="developer">
-
   <h2 class="section-title"
       data-en="About the Developer"
       data-ar="عن المطوّرة">
     About the Developer
   </h2>
 
-  <h3 class="developer-name">
+  <h3 class="developer-name"
+      data-en="Amatalelah Abdulazez Mashhor Al-Ahdel"
+      data-ar="أمة الإله عبدالعزيز مشهور الأهدل">
     Amatalelah Abdulazez Mashhor Al-Ahdel
   </h3>
 
-  <p data-en="PLATFORM DEVELOPER"
-     data-ar="مطوّرة المنصة">
+  <p data-en="PLATFORM DEVELOPER" data-ar="مطوّرة المنصة">
     PLATFORM DEVELOPER
   </p>
 
@@ -596,11 +514,9 @@ footer .copyright {
      data-ar="تطوير أدوات رقمية بحثية لدعم التحليل الإحصائي والعمل العلمي.">
     Developing research-oriented digital tools to support statistical analysis and scientific work.
   </p>
-
 </section>
 
 <section class="cta">
-
   <h2 class="section-title"
       data-en="Start Your Research Journey"
       data-ar="ابدأ رحلتك البحثية">
@@ -621,11 +537,9 @@ footer .copyright {
      data-ar="زيارة المنصة">
     VISIT THE PLATFORM
   </a>
-
 </section>
 
 <section class="contact" id="contact">
-
   <h2 class="section-title"
       data-en="Contact STATNOVA"
       data-ar="تواصل مع STATNOVA">
@@ -642,14 +556,10 @@ footer .copyright {
       supportstatnova@gmail.com
     </a>
   </p>
-
 </section>
 
 <footer>
-
-  <div class="logo" style="color:white">
-    STAT<span>NOVA</span>
-  </div>
+  <div class="logo" style="color:white">STAT<span>NOVA</span></div>
 
   <p data-en="Turning Data into Research Insights."
      data-ar="نحوّل البيانات إلى رؤى بحثية.">
@@ -657,31 +567,22 @@ footer .copyright {
   </p>
 
   <div class="footer-links">
-
-    <a href="privacy.html"
-       data-en="Privacy Policy"
-       data-ar="سياسة الخصوصية">
+    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">
       Privacy Policy
     </a>
 
-    <a href="terms.html"
-       data-en="Terms of Use"
-       data-ar="شروط الاستخدام">
+    <a href="terms.html" data-en="Terms of Use" data-ar="شروط الاستخدام">
       Terms of Use
     </a>
 
-    <a href="#contact"
-       data-en="Contact"
-       data-ar="تواصل معنا">
+    <a href="#contact" data-en="Contact" data-ar="تواصل معنا">
       Contact
     </a>
-
   </div>
 
   <p class="copyright">
     © <span id="year"></span> STATNOVA.
-    <span data-en="All rights reserved."
-          data-ar="جميع الحقوق محفوظة.">
+    <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">
       All rights reserved.
     </span>
   </p>
@@ -692,41 +593,58 @@ footer .copyright {
       Developed by Amatalelah Abdulazez Mashhor Al-Ahdel
     </span>
   </p>
-
 </footer>
 
 <script>
+"use strict";
+
+// Update copyright year
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
+// Language switching function
 function setLanguage(language) {
+  const selectedLanguage = language === "ar" ? "ar" : "en";
+  const isArabic = selectedLanguage === "ar";
 
-  document.documentElement.lang = language;
+  // Update page direction and language
+  document.documentElement.lang = selectedLanguage;
+  document.documentElement.dir = isArabic ? "rtl" : "ltr";
 
-  document.documentElement.dir =
-    language === "ar" ? "rtl" : "ltr";
+  // Update all bilingual elements
+  document.querySelectorAll("[data-en][data-ar]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + selectedLanguage);
+  });
 
-  document.querySelectorAll("[data-en][data-ar]")
-    .forEach(element => {
-      element.textContent =
-        element.getAttribute("data-" + language);
-    });
+  // Update language buttons
+  const englishButton = document.getElementById("englishButton");
+  const arabicButton = document.getElementById("arabicButton");
 
-  document.getElementById("englishButton")
-    .classList.toggle("active", language === "en");
+  englishButton.classList.toggle("active", !isArabic);
+  arabicButton.classList.toggle("active", isArabic);
 
-  document.getElementById("arabicButton")
-    .classList.toggle("active", language === "ar");
+  englishButton.setAttribute("aria-pressed", String(!isArabic));
+  arabicButton.setAttribute("aria-pressed", String(isArabic));
 
-  document.title = language === "ar"
+  // Update browser tab title
+  document.title = isArabic
     ? "STATNOVA | منصة التحليل الإحصائي الذكي"
     : "STATNOVA | Smart Statistical Analysis";
 }
 
-// Default language
+// Attach click events after the page elements are available
+document.getElementById("englishButton").addEventListener("click", function() {
+  setLanguage("en");
+});
+
+document.getElementById("arabicButton").addEventListener("click", function() {
+  setLanguage("ar");
+});
+
+// Make the English version the default language
 setLanguage("en");
 </script>
 
 </body>
   </html>
-  
+      
