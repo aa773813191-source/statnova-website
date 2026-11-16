@@ -4,8 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Official academic and professional profile of Amatalelah Abdulazez Mashhor Al-Ahdel, Researcher and Founder of STATNOVA.">
 <meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+
 <title>Researcher Profile | Amatalelah Al-Ahdel</title>
 
 <style>
@@ -140,18 +142,23 @@ li {
   margin-top: 18px;
 }
 
-.links a {
+.links a,
+.home-button {
   display: inline-block;
   background: var(--navy);
   color: white;
   text-decoration: none;
   padding: 10px 17px;
   border-radius: 7px;
-  overflow-wrap: anywhere;
+  border: none;
+  font-size: 15px;
+  text-align: center;
 }
 
-.links a:hover {
+.links a:hover,
+.home-button:hover {
   background: var(--blue);
+  color: white;
 }
 
 .email {
@@ -171,6 +178,17 @@ footer a {
   color: var(--cyan);
   text-decoration: none;
   margin: 0 8px;
+}
+
+.footer-name {
+  font-weight: bold;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+.home-area {
+  text-align: center;
+  margin: 10px 0 25px;
 }
 
 [hidden] {
@@ -193,6 +211,10 @@ footer a {
   .links a {
     text-align: center;
   }
+
+  .language {
+    gap: 10px;
+  }
 }
 </style>
 </head>
@@ -201,6 +223,7 @@ footer a {
 
 <header>
   <div class="logo">STATNOVA</div>
+
   <div class="tagline"
        data-en="Turning Data into Research Insights"
        data-ar="نحوّل البيانات إلى رؤى بحثية">
@@ -208,8 +231,13 @@ footer a {
   </div>
 
   <div class="language">
-    <button id="enBtn" class="active" onclick="setLanguage('en')">English</button>
-    <button id="arBtn" onclick="setLanguage('ar')">العربية</button>
+    <button id="enBtn" class="active" onclick="setLanguage('en')">
+      English
+    </button>
+
+    <button id="arBtn" onclick="setLanguage('ar')">
+      العربية
+    </button>
   </div>
 </header>
 
@@ -223,7 +251,7 @@ footer a {
   </div>
 
   <div id="arabic" hidden>
-    <h1>أمة الإله عبدالعزيز مشهور الأهدل</h1>
+    <h1>أمة الإله عبد العزيز مشهور الأهدل</h1>
     <div class="role">باحثة | مؤسسة STATNOVA</div>
     <p>باحثة أكاديمية في الفيزياء والحوسبة البحثية</p>
   </div>
@@ -232,6 +260,7 @@ footer a {
 <main>
 
 <div id="englishContent">
+
   <section class="card">
     <h2>About Me</h2>
     <p>
@@ -288,10 +317,13 @@ footer a {
     </p>
 
     <div class="links">
-      <a href="https://statnova-website.vercel.app" target="_blank" rel="noopener">
+      <a href="https://statnova-website.vercel.app"
+         target="_blank" rel="noopener">
         STATNOVA Website
       </a>
-      <a href="https://statnova-amatalelah2.streamlit.app/" target="_blank" rel="noopener">
+
+      <a href="https://statnova-amatalelah2.streamlit.app/"
+         target="_blank" rel="noopener">
         Open Analysis Platform
       </a>
     </div>
@@ -306,9 +338,11 @@ footer a {
       </a>
     </p>
   </section>
+
 </div>
 
 <div id="arabicContent" hidden>
+
   <section class="card">
     <h2>نبذة تعريفية</h2>
     <p>
@@ -364,10 +398,13 @@ footer a {
     </p>
 
     <div class="links">
-      <a href="https://statnova-website.vercel.app" target="_blank" rel="noopener">
+      <a href="https://statnova-website.vercel.app"
+         target="_blank" rel="noopener">
         موقع STATNOVA
       </a>
-      <a href="https://statnova-amatalelah2.streamlit.app/" target="_blank" rel="noopener">
+
+      <a href="https://statnova-amatalelah2.streamlit.app/"
+         target="_blank" rel="noopener">
         فتح منصة التحليل
       </a>
     </div>
@@ -382,19 +419,47 @@ footer a {
       </a>
     </p>
   </section>
+
+</div>
+
+<div class="home-area">
+  <a id="homeButton" class="home-button" href="index.html">
+    Back to Home
+  </a>
 </div>
 
 </main>
 
 <footer>
-  <p>
-    <a href="index.html">Home / الرئيسية</a>
-    |
-    <a href="privacy.html">Privacy Policy / سياسة الخصوصية</a>
-    |
-    <a href="terms.html">Terms of Use / شروط الاستخدام</a>
-  </p>
-  <p>© 2026 STATNOVA. All rights reserved.</p>
+
+  <div id="englishFooter">
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Use</a>
+    </p>
+
+    <p>© 2026 STATNOVA. All rights reserved.</p>
+
+    <p class="footer-name">
+      Amatalelah Abdulazez Mashhor Al-Ahdel
+    </p>
+  </div>
+
+  <div id="arabicFooter" hidden>
+    <p>
+      <a href="index.html">الرئيسية</a> |
+      <a href="privacy.html">سياسة الخصوصية</a> |
+      <a href="terms.html">شروط الاستخدام</a>
+    </p>
+
+    <p>© 2026 STATNOVA. جميع الحقوق محفوظة.</p>
+
+    <p class="footer-name">
+      أمة الإله عبد العزيز مشهور الأهدل
+    </p>
+  </div>
+
 </footer>
 
 <script>
@@ -410,10 +475,17 @@ function setLanguage(lang) {
   document.getElementById("englishContent").hidden = isArabic;
   document.getElementById("arabicContent").hidden = !isArabic;
 
+  document.getElementById("englishFooter").hidden = isArabic;
+  document.getElementById("arabicFooter").hidden = !isArabic;
+
+  document.getElementById("homeButton").textContent =
+    isArabic ? "العودة إلى الرئيسية" : "Back to Home";
+
   document.getElementById("enBtn").classList.toggle("active", !isArabic);
   document.getElementById("arBtn").classList.toggle("active", isArabic);
 }
 </script>
 
 </body>
-</html>
+  </html>
+  
