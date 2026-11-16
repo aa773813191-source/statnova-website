@@ -4,8 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="STATNOVA Terms of Use - Terms and conditions for using the statistical research platform.">
+
+<meta name="description" content="STATNOVA Terms of Use.">
 <meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+
 <title>Terms of Use | STATNOVA</title>
 
 <style>
@@ -30,22 +32,21 @@ body {
 }
 
 header {
-  background: linear-gradient(120deg, var(--navy), var(--blue));
+  background: linear-gradient(130deg, var(--navy), var(--blue));
   color: white;
-  padding: 28px 18px;
   text-align: center;
+  padding: 30px 18px;
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 29px;
   font-weight: bold;
   letter-spacing: 2px;
-  color: white;
 }
 
 .tagline {
   color: var(--cyan);
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .language {
@@ -65,65 +66,98 @@ button {
   font-size: 15px;
 }
 
-button:hover,
-button.active {
+button.active,
+button:hover {
   background: white;
   color: var(--navy);
 }
 
 main {
   max-width: 900px;
-  margin: 35px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 5px 20px rgba(16,43,80,.07);
+  margin: auto;
+  padding: 35px 18px 40px;
 }
 
-h1, h2 {
-  color: var(--navy);
-}
-
-h1 {
+.page-title {
   text-align: center;
-  margin-bottom: 8px;
+  color: var(--navy);
+  margin: 0 0 8px;
+  font-size: 29px;
 }
 
 .updated {
   text-align: center;
-  color: #718096;
+  color: #647789;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
-section {
-  margin: 25px 0;
+.card {
+  background: white;
+  padding: 25px;
+  margin: 18px 0;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px rgba(16,43,80,.06);
 }
 
-section h2 {
-  font-size: 19px;
+h2 {
+  color: var(--navy);
+  font-size: 20px;
   border-bottom: 2px solid var(--cyan);
-  padding-bottom: 5px;
+  padding-bottom: 8px;
+  margin-top: 0;
 }
 
-a {
+ul {
+  padding-inline-start: 24px;
+}
+
+li {
+  margin-bottom: 9px;
+}
+
+.email {
   color: var(--blue);
-  text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
-a:hover {
-  text-decoration: underline;
+.home-area {
+  text-align: center;
+  margin: 28px 0 10px;
+}
+
+.home-button {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  padding: 11px 24px;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.home-button:hover {
+  background: var(--blue);
 }
 
 footer {
+  background: var(--navy);
+  color: white;
   text-align: center;
   padding: 25px 15px;
-  color: #66788a;
   font-size: 14px;
 }
 
 footer a {
-  margin: 0 9px;
+  color: var(--cyan);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-name {
+  font-weight: bold;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
 }
 
 [hidden] {
@@ -131,13 +165,16 @@ footer a {
 }
 
 @media(max-width:600px) {
-  main {
-    margin: 18px 12px;
-    padding: 20px;
+  .page-title {
+    font-size: 24px;
   }
 
-  .logo {
-    font-size: 25px;
+  .card {
+    padding: 19px;
+  }
+
+  .language {
+    gap: 10px;
   }
 }
 </style>
@@ -147,243 +184,313 @@ footer a {
 
 <header>
   <div class="logo">STATNOVA</div>
-  <div class="tagline" data-en="Turning Data into Research Insights"
-       data-ar="نحوّل البيانات إلى رؤى بحثية">
+
+  <div class="tagline">
     Turning Data into Research Insights
   </div>
 
   <div class="language">
-    <button id="enBtn" class="active" onclick="setLanguage('en')">English</button>
-    <button id="arBtn" onclick="setLanguage('ar')">العربية</button>
+    <button id="enBtn" class="active" onclick="setLanguage('en')">
+      English
+    </button>
+
+    <button id="arBtn" onclick="setLanguage('ar')">
+      العربية
+    </button>
   </div>
 </header>
 
 <main>
-  <div id="english">
-    <h1>Terms of Use</h1>
-    <div class="updated">Last updated: November 16, 2026</div>
 
-    <section>
-      <h2>1. Acceptance of Terms</h2>
-      <p>
-        By accessing or using STATNOVA, you agree to these Terms of Use.
-        If you do not agree with these terms, please do not use the platform.
-      </p>
-    </section>
+<!-- ENGLISH VERSION -->
+<div id="englishContent">
 
-    <section>
-      <h2>2. Platform Purpose</h2>
-      <p>
-        STATNOVA is designed to support students, researchers, and academic
-        users in organizing data, performing statistical analyses, and
-        understanding research results.
-      </p>
-    </section>
+  <h1 class="page-title">Terms of Use</h1>
 
-    <section>
-      <h2>3. User Responsibilities</h2>
-      <p>Users are responsible for:</p>
-      <ul>
-        <li>Providing data they are authorized to use.</li>
-        <li>Ensuring uploaded information is accurate and appropriate.</li>
-        <li>Protecting confidential and sensitive research information.</li>
-        <li>Using the platform lawfully and ethically.</li>
-        <li>Reviewing analysis results before using them in academic work.</li>
-      </ul>
-    </section>
+  <p class="updated">
+    Last Updated: November 16, 2026
+  </p>
 
-    <section>
-      <h2>4. Research and Statistical Results</h2>
-      <p>
-        Statistical outputs and automated suggestions are provided as
-        research-support tools. They should not be considered a substitute
-        for professional statistical judgment, scientific review, or
-        independent verification.
-      </p>
-      <p>
-        Users are responsible for interpreting results correctly and
-        selecting methods appropriate to their research questions.
-      </p>
-    </section>
+  <section class="card">
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By accessing or using the STATNOVA platform, you agree
+      to these Terms of Use. If you do not agree with these
+      terms, please discontinue using the platform.
+    </p>
+  </section>
 
-    <section>
-      <h2>5. Data and Intellectual Property</h2>
-      <p>
-        Users retain responsibility for the data and research materials
-        they submit. Users must have the necessary rights and permissions
-        to upload and process such materials.
-      </p>
-      <p>
-        The STATNOVA name, branding, website design, and original platform
-        materials belong to their respective owners and may not be copied
-        or commercially reused without permission.
-      </p>
-    </section>
+  <section class="card">
+    <h2>2. Purpose of the Platform</h2>
+    <p>
+      STATNOVA is designed to support students, researchers,
+      and academic users in organizing data, performing
+      statistical analyses, and understanding research results.
+    </p>
+  </section>
 
-    <section>
-      <h2>6. Prohibited Activities</h2>
-      <p>Users must not:</p>
-      <ul>
-        <li>Use the platform for unlawful or harmful purposes.</li>
-        <li>Attempt to disrupt or compromise platform security.</li>
-        <li>Upload malicious software or harmful content.</li>
-        <li>Misrepresent statistical results or research findings.</li>
-        <li>Copy or redistribute protected platform materials without authorization.</li>
-      </ul>
-    </section>
+  <section class="card">
+    <h2>3. User Responsibilities</h2>
+    <p>Users are responsible for:</p>
+    <ul>
+      <li>Providing data they are legally authorized to use.</li>
+      <li>Ensuring that submitted information is accurate and appropriate.</li>
+      <li>Protecting confidential and sensitive research information.</li>
+      <li>Using the platform in a lawful and ethical manner.</li>
+      <li>Reviewing analytical results before using them in academic work.</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>7. Availability and Changes</h2>
-      <p>
-        Features may be updated, modified, temporarily unavailable, or
-        discontinued as the platform develops. We aim to improve the
-        platform but do not guarantee uninterrupted availability.
-      </p>
-    </section>
+  <section class="card">
+    <h2>4. Research and Statistical Results</h2>
+    <p>
+      Statistical outputs and automated suggestions are provided
+      as research-support tools. They should not be considered
+      a substitute for professional statistical evaluation,
+      scientific review, or independent verification.
+    </p>
+    <p>
+      Users are responsible for interpreting results correctly
+      and selecting methods appropriate to their research questions.
+    </p>
+  </section>
 
-    <section>
-      <h2>8. Disclaimer</h2>
-      <p>
-        STATNOVA is provided as a research-support platform. To the extent
-        permitted by applicable law, the platform is provided without
-        guarantees that every result will be error-free or suitable for
-        every research purpose.
-      </p>
-    </section>
+  <section class="card">
+    <h2>5. Data and Intellectual Property</h2>
+    <p>
+      Users remain responsible for the data and research materials
+      they submit. They must have the necessary rights and
+      permissions to upload and process those materials.
+    </p>
+    <p>
+      The STATNOVA name, brand identity, website design, and
+      original platform materials belong to their respective
+      rights holders. They may not be copied or commercially
+      reused without appropriate permission.
+    </p>
+  </section>
 
-    <section>
-      <h2>9. Limitation of Responsibility</h2>
-      <p>
-        Users are responsible for decisions made based on platform outputs.
-        Nothing on STATNOVA should be treated as a guarantee of academic,
-        scientific, medical, or professional outcomes.
-      </p>
-    </section>
+  <section class="card">
+    <h2>6. Prohibited Activities</h2>
+    <p>Users must not:</p>
+    <ul>
+      <li>Use the platform for unlawful or harmful purposes.</li>
+      <li>Attempt to disrupt, compromise, or gain unauthorized access to platform security.</li>
+      <li>Upload malicious software or harmful content.</li>
+      <li>Misrepresent statistical findings or research results.</li>
+      <li>Copy or redistribute protected platform materials without permission.</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>10. Contact</h2>
-      <p>
-        For questions about these Terms of Use, contact:
-        <a href="mailto:supportstatnova@gmail.com">supportstatnova@gmail.com</a>
-      </p>
-    </section>
-  </div>
+  <section class="card">
+    <h2>7. Availability and Changes</h2>
+    <p>
+      Platform features may be updated, modified, temporarily
+      suspended, or discontinued as the service develops.
+      We aim to improve STATNOVA, but uninterrupted availability
+      cannot be guaranteed.
+    </p>
+  </section>
 
-  <div id="arabic" hidden>
-    <h1>شروط الاستخدام</h1>
-    <div class="updated">آخر تحديث: 16 نوفمبر 2026</div>
+  <section class="card">
+    <h2>8. Disclaimer</h2>
+    <p>
+      STATNOVA is provided as a research-support tool.
+      To the extent permitted by applicable law, the platform
+      is provided without a guarantee that every result will
+      be error-free or suitable for every research purpose.
+    </p>
+  </section>
 
-    <section>
-      <h2>1. الموافقة على الشروط</h2>
-      <p>
-        باستخدامك منصة STATNOVA أو دخولك إليها، فإنك توافق على شروط
-        الاستخدام هذه. إذا كنت لا توافق عليها، يرجى عدم استخدام المنصة.
-      </p>
-    </section>
+  <section class="card">
+    <h2>9. Limitation of Responsibility</h2>
+    <p>
+      Users are responsible for decisions made based on the
+      platform's outputs. Nothing provided by STATNOVA should
+      be interpreted as a guarantee of academic, scientific,
+      medical, or professional outcomes.
+    </p>
+  </section>
 
-    <section>
-      <h2>2. الغرض من المنصة</h2>
-      <p>
-        تهدف STATNOVA إلى دعم الطلاب والباحثين والمستخدمين الأكاديميين
-        في تنظيم البيانات وإجراء التحليلات الإحصائية وفهم نتائج الأبحاث.
-      </p>
-    </section>
+  <section class="card">
+    <h2>10. Contact Us</h2>
+    <p>
+      For questions about these Terms of Use, please contact us at:
+    </p>
+    <p>
+      Email:
+      <a class="email" href="mailto:supportstatnova@gmail.com">
+        supportstatnova@gmail.com
+      </a>
+    </p>
+  </section>
 
-    <section>
-      <h2>3. مسؤوليات المستخدم</h2>
-      <p>يتحمل المستخدم مسؤولية ما يلي:</p>
-      <ul>
-        <li>تقديم البيانات التي يملك حق استخدامها.</li>
-        <li>التأكد من دقة المعلومات المرفوعة وملاءمتها.</li>
-        <li>حماية المعلومات البحثية السرية والحساسة.</li>
-        <li>استخدام المنصة بطريقة قانونية وأخلاقية.</li>
-        <li>مراجعة نتائج التحليل قبل استخدامها في الأعمال الأكاديمية.</li>
-      </ul>
-    </section>
+</div>
 
-    <section>
-      <h2>4. النتائج الإحصائية والبحثية</h2>
-      <p>
-        تُقدم النتائج الإحصائية والاقتراحات الآلية بوصفها أدوات مساعدة
-        للبحث العلمي، ولا تُعد بديلًا عن الحكم الإحصائي المتخصص أو
-        المراجعة العلمية أو التحقق المستقل.
-      </p>
-      <p>
-        يتحمل المستخدم مسؤولية تفسير النتائج بصورة صحيحة واختيار
-        الأساليب المناسبة لأسئلة بحثه.
-      </p>
-    </section>
+<!-- ARABIC VERSION -->
+<div id="arabicContent" hidden>
 
-    <section>
-      <h2>5. البيانات والملكية الفكرية</h2>
-      <p>
-        يظل المستخدم مسؤولًا عن البيانات والمواد البحثية التي يقدمها،
-        ويجب أن يمتلك الحقوق والتصاريح اللازمة لرفعها ومعالجتها.
-      </p>
-      <p>
-        اسم STATNOVA وهويتها البصرية وتصميم الموقع والمواد الأصلية
-        الخاصة بالمنصة تخضع لحقوق أصحابها، ولا يجوز نسخها أو إعادة
-        استخدامها تجاريًا دون إذن.
-      </p>
-    </section>
+  <h1 class="page-title">شروط الاستخدام</h1>
 
-    <section>
-      <h2>6. الأنشطة المحظورة</h2>
-      <p>يُمنع على المستخدم:</p>
-      <ul>
-        <li>استخدام المنصة لأغراض غير قانونية أو ضارة.</li>
-        <li>محاولة تعطيل أمن المنصة أو اختراقه.</li>
-        <li>رفع برمجيات خبيثة أو محتوى ضار.</li>
-        <li>تحريف النتائج الإحصائية أو الاستنتاجات البحثية.</li>
-        <li>نسخ مواد المنصة المحمية أو إعادة توزيعها دون تصريح.</li>
-      </ul>
-    </section>
+  <p class="updated">
+    آخر تحديث: 16 نوفمبر 2026
+  </p>
 
-    <section>
-      <h2>7. توفر المنصة والتحديثات</h2>
-      <p>
-        قد يتم تحديث ميزات المنصة أو تعديلها أو إيقافها مؤقتًا أو
-        نهائيًا أثناء تطويرها. نسعى إلى تحسين المنصة، لكننا لا نضمن
-        استمرار توفرها دون انقطاع.
-      </p>
-    </section>
+  <section class="card">
+    <h2>1. قبول الشروط</h2>
+    <p>
+      باستخدامك أو دخولك إلى منصة STATNOVA، فإنك توافق
+      على شروط الاستخدام هذه. إذا كنت لا توافق على هذه
+      الشروط، يُرجى عدم استخدام المنصة.
+    </p>
+  </section>
 
-    <section>
-      <h2>8. إخلاء المسؤولية</h2>
-      <p>
-        تُقدم STATNOVA بوصفها منصة مساعدة للبحث العلمي. وفي الحدود
-        التي يسمح بها القانون المعمول به، لا نقدم ضمانًا بأن جميع
-        النتائج ستكون خالية من الأخطاء أو مناسبة لكل غرض بحثي.
-      </p>
-    </section>
+  <section class="card">
+    <h2>2. غرض المنصة</h2>
+    <p>
+      تم تصميم منصة STATNOVA لدعم الطلاب والباحثين
+      والمستخدمين الأكاديميين في تنظيم البيانات وإجراء
+      التحليلات الإحصائية وفهم نتائج البحوث.
+    </p>
+  </section>
 
-    <section>
-      <h2>9. حدود المسؤولية</h2>
-      <p>
-        يتحمل المستخدم مسؤولية القرارات التي يتخذها بناءً على مخرجات
-        المنصة. ولا تمثل أي معلومات في STATNOVA ضمانًا لتحقيق نتائج
-        أكاديمية أو علمية أو طبية أو مهنية محددة.
-      </p>
-    </section>
+  <section class="card">
+    <h2>3. مسؤوليات المستخدم</h2>
+    <p>يتحمل المستخدمون مسؤولية ما يلي:</p>
+    <ul>
+      <li>توفير البيانات التي لديهم تصريح باستخدامها.</li>
+      <li>ضمان دقة المعلومات التي يتم تحميلها وملاءمتها.</li>
+      <li>حماية المعلومات البحثية السرية والحساسة.</li>
+      <li>استخدام المنصة بشكل قانوني وأخلاقي.</li>
+      <li>مراجعة نتائج التحليل قبل استخدامها في العمل الأكاديمي.</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>10. التواصل</h2>
-      <p>
-        للاستفسارات المتعلقة بشروط الاستخدام، يمكن التواصل عبر:
-        <a href="mailto:supportstatnova@gmail.com">supportstatnova@gmail.com</a>
-      </p>
-    </section>
-  </div>
+  <section class="card">
+    <h2>4. نتائج البحث والإحصاءات</h2>
+    <p>
+      تُقدَّم المخرجات الإحصائية والاقتراحات الآلية بوصفها
+      أدوات لدعم البحث، ولا ينبغي اعتبارها بديلًا عن
+      التقييم الإحصائي المهني أو المراجعة العلمية
+      أو التحقق المستقل.
+    </p>
+    <p>
+      يتحمل المستخدمون مسؤولية تفسير النتائج بصورة صحيحة
+      واختيار الأساليب المناسبة لأسئلة البحث الخاصة بهم.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>5. البيانات والملكية الفكرية</h2>
+    <p>
+      يتحمل المستخدمون مسؤولية البيانات والمواد البحثية
+      التي يقدمونها، ويجب أن يمتلكوا الحقوق والتصاريح
+      اللازمة لتحميل هذه المواد ومعالجتها.
+    </p>
+    <p>
+      اسم STATNOVA وهويتها التجارية وتصميم موقعها الإلكتروني
+      والمواد الأصلية الخاصة بالمنصة مملوكة لأصحاب الحقوق
+      المعنيين، ولا يجوز نسخها أو إعادة استخدامها تجاريًا
+      دون الحصول على إذن مناسب.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>6. الأنشطة المحظورة</h2>
+    <p>يجب على المستخدمين عدم القيام بما يلي:</p>
+    <ul>
+      <li>استخدام المنصة لأغراض غير قانونية أو ضارة.</li>
+      <li>محاولة تعطيل أمن المنصة أو اختراقه أو الوصول غير المصرح به إليها.</li>
+      <li>تحميل برامج ضارة أو محتوى ضار.</li>
+      <li>تحريف النتائج الإحصائية أو نتائج البحوث.</li>
+      <li>نسخ مواد المنصة المحمية أو إعادة توزيعها دون إذن.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>7. التوافر والتغييرات</h2>
+    <p>
+      قد يتم تحديث ميزات المنصة أو تعديلها أو تعليقها
+      مؤقتًا أو إيقافها مع تطور الخدمة. نسعى باستمرار
+      إلى تحسين STATNOVA، لكننا لا نضمن استمرار توفرها
+      دون انقطاع.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>8. إخلاء المسؤولية</h2>
+    <p>
+      تُقدَّم منصة STATNOVA بوصفها أداة لدعم الأبحاث.
+      وبالقدر الذي يسمح به القانون المعمول به، تُقدَّم
+      المنصة دون ضمان خلو جميع النتائج من الأخطاء
+      أو ملاءمتها لكل غرض بحثي.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>9. تحديد المسؤولية</h2>
+    <p>
+      يتحمل المستخدمون مسؤولية القرارات المتخذة بناءً
+      على مخرجات المنصة. ولا ينبغي اعتبار أي محتوى
+      تقدمه STATNOVA ضمانًا لتحقيق نتائج أكاديمية
+      أو علمية أو طبية أو مهنية محددة.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>10. التواصل معنا</h2>
+    <p>
+      للاستفسارات المتعلقة بشروط الاستخدام، يُرجى
+      التواصل معنا عبر البريد الإلكتروني:
+    </p>
+    <p>
+      البريد الإلكتروني:
+      <a class="email" href="mailto:supportstatnova@gmail.com">
+        supportstatnova@gmail.com
+      </a>
+    </p>
+  </section>
+
+</div>
+
+<div class="home-area">
+  <a id="homeButton" class="home-button" href="index.html">
+    Back to Home
+  </a>
+</div>
+
 </main>
 
 <footer>
-  <p>
-    <a href="index.html">Home / الرئيسية</a>
-    |
-    <a href="privacy.html">Privacy Policy / سياسة الخصوصية</a>
-  </p>
-  <p>© 2026 STATNOVA. All rights reserved.</p>
-  <p>Developed by Amatalelah Abdulazez Mashhor Al-Ahdel</p>
+
+  <div id="englishFooter">
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="profile.html">Researcher Profile</a>
+    </p>
+
+    <p>© 2026 STATNOVA. All rights reserved.</p>
+
+    <p class="footer-name">
+      Amatalelah Abdulazez Mashhor Al-Ahdel
+    </p>
+  </div>
+
+  <div id="arabicFooter" hidden>
+    <p>
+      <a href="index.html">الرئيسية</a> |
+      <a href="privacy.html">سياسة الخصوصية</a> |
+      <a href="profile.html">الملف الشخصي للباحثة</a>
+    </p>
+
+    <p>© 2026 STATNOVA. جميع الحقوق محفوظة.</p>
+
+    <p class="footer-name">
+      أمة الإله عبد العزيز مشهور الأهدل
+    </p>
+  </div>
+
 </footer>
 
 <script>
@@ -393,8 +500,14 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   document.documentElement.dir = isArabic ? "rtl" : "ltr";
 
-  document.getElementById("english").hidden = isArabic;
-  document.getElementById("arabic").hidden = !isArabic;
+  document.getElementById("englishContent").hidden = isArabic;
+  document.getElementById("arabicContent").hidden = !isArabic;
+
+  document.getElementById("englishFooter").hidden = isArabic;
+  document.getElementById("arabicFooter").hidden = !isArabic;
+
+  document.getElementById("homeButton").textContent =
+    isArabic ? "العودة إلى الرئيسية" : "Back to Home";
 
   document.getElementById("enBtn").classList.toggle("active", !isArabic);
   document.getElementById("arBtn").classList.toggle("active", isArabic);
@@ -402,4 +515,5 @@ function setLanguage(lang) {
 </script>
 
 </body>
-</html>
+  </html>
+                                  
