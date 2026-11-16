@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google" content="notranslate">
 <meta name="theme-color" content="#102b50">
+<meta name="description" content="STATNOVA Privacy Policy - Information about privacy and data handling.">
+<meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+
 <title>STATNOVA | Privacy Policy</title>
 
 <style>
@@ -16,6 +19,7 @@
   --light:#eef8fc;
 }
 * { box-sizing:border-box; }
+
 body {
   margin:0;
   font-family:Arial,sans-serif;
@@ -23,24 +27,29 @@ body {
   color:#263d53;
   line-height:1.9;
 }
+
 header,footer {
   background:var(--navy);
   color:white;
   text-align:center;
   padding:25px 6%;
 }
+
 .logo {
   font-size:29px;
   font-weight:900;
   letter-spacing:2px;
 }
+
 .logo span { color:var(--cyan); }
+
 .language {
   display:flex;
   justify-content:center;
   gap:12px;
   margin-top:15px;
 }
+
 button {
   border:0;
   border-radius:8px;
@@ -50,9 +59,9 @@ button {
   font-weight:bold;
   cursor:pointer;
 }
-button.active {
-  background:var(--cyan);
-}
+
+button.active { background:var(--cyan); }
+
 main {
   max-width:900px;
   margin:35px auto;
@@ -61,9 +70,11 @@ main {
   border-radius:15px;
   box-shadow:0 5px 25px #102b5010;
 }
+
 h1,h2 { color:var(--navy); }
 h1 { text-align:center; }
 h2 { color:var(--blue); margin-top:30px; }
+
 .home {
   display:inline-block;
   background:var(--navy);
@@ -71,8 +82,30 @@ h2 { color:var(--blue); margin-top:30px; }
   padding:10px 20px;
   border-radius:8px;
   margin-top:20px;
+  text-decoration:none;
 }
+
+.home:hover { background:var(--blue); }
+
 footer { font-size:14px; }
+
+.footer-links {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+  margin:15px 0;
+}
+
+.footer-links a {
+  color:var(--cyan);
+  text-decoration:none;
+}
+
+.footer-links a:hover { text-decoration:underline; }
+
+footer p { margin:8px 0; }
+
 @media(max-width:600px) {
   main { margin:15px; padding:22px; }
 }
@@ -83,9 +116,10 @@ footer { font-size:14px; }
 
 <header>
   <div class="logo">STAT<span>NOVA</span></div>
+
   <div class="language">
-    <button id="enBtn" class="active">English</button>
-    <button id="arBtn">العربية</button>
+    <button id="enBtn" class="active" type="button">English</button>
+    <button id="arBtn" type="button">العربية</button>
   </div>
 </header>
 
@@ -141,8 +175,15 @@ footer { font-size:14px; }
 </main>
 
 <footer>
-  STATNOVA © 2026
-  <p>Amatalelah Abdulazez Mashhor Al-Ahdel</p>
+  <div>STATNOVA © 2026</div>
+
+  <div class="footer-links">
+    <a href="index.html" id="footerHome">Home</a>
+    <a href="terms.html" id="footerTerms">Terms of Use</a>
+    <a href="profile.html" id="footerProfile">Researcher Profile</a>
+  </div>
+
+  <p id="footerFounder">Amatalelah Abdulazez Mashhor Al-Ahdel</p>
 </footer>
 
 <script>
@@ -162,8 +203,13 @@ s5Title:"5. Data Security",
 s5:"Reasonable technical measures are intended to protect information. However, no online service can guarantee absolute security.",
 s6Title:"6. Contact",
 s6:"For privacy questions, contact: supportstatnova@gmail.com",
-home:"Back to Home"
+home:"Back to Home",
+footerHome:"Home",
+footerTerms:"Terms of Use",
+footerProfile:"Researcher Profile",
+founder:"Amatalelah Abdulazez Mashhor Al-Ahdel"
 },
+
 ar: {
 title:"سياسة الخصوصية",
 intro:"تحترم STATNOVA خصوصية المستخدمين، وتسعى إلى توضيح كيفية التعامل مع المعلومات عند استخدام المنصة.",
@@ -179,28 +225,83 @@ s5Title:"5. أمن البيانات",
 s5:"نسعى إلى استخدام تدابير تقنية معقولة لحماية المعلومات، لكن لا يمكن لأي خدمة عبر الإنترنت ضمان الأمان المطلق.",
 s6Title:"6. التواصل",
 s6:"للاستفسارات المتعلقة بالخصوصية، تواصلوا عبر: supportstatnova@gmail.com",
-home:"العودة إلى الرئيسية"
+home:"العودة إلى الرئيسية",
+footerHome:"الرئيسية",
+footerTerms:"شروط الاستخدام",
+footerProfile:"الملف التعريفي للباحثة",
+founder:"أمة الإله عبد العزيز مشهور الأهدل"
 }
 };
 
 function setLanguage(lang) {
-const t = translations[lang];
-document.documentElement.lang = lang;
-document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-Object.keys(t).forEach(key => {
-const element = document.getElementById(key === "title" ? "pageTitle" :
-key === "home" ? "homeBtn" : key);
-if(element) element.textContent = t[key];
-});
-document.getElementById("enBtn").classList.toggle("active",lang==="en");
-document.getElementById("arBtn").classList.toggle("active",lang==="ar");
-document.title = "STATNOVA | " + t.title;
+  const t = translations[lang];
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  const elements = [
+    "pageTitle",
+    "intro",
+    "s1Title",
+    "s1",
+    "s2Title",
+    "s2",
+    "s3Title",
+    "s3",
+    "s4Title",
+    "s4",
+    "s5Title",
+    "s5",
+    "s6Title",
+    "s6",
+    "homeBtn",
+    "footerHome",
+    "footerTerms",
+    "footerProfile",
+    "footerFounder"
+  ];
+
+  const translationKeys = [
+    "title",
+    "intro",
+    "s1Title",
+    "s1",
+    "s2Title",
+    "s2",
+    "s3Title",
+    "s3",
+    "s4Title",
+    "s4",
+    "s5Title",
+    "s5",
+    "s6Title",
+    "s6",
+    "home",
+    "footerHome",
+    "footerTerms",
+    "footerProfile",
+    "founder"
+  ];
+
+  elements.forEach((id, index) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.textContent = t[translationKeys[index]];
+    }
+  });
+
+  document.getElementById("enBtn").classList.toggle("active", lang === "en");
+  document.getElementById("arBtn").classList.toggle("active", lang === "ar");
+
+  document.title = "STATNOVA | " + t.title;
 }
+
 document.getElementById("enBtn").onclick = () => setLanguage("en");
 document.getElementById("arBtn").onclick = () => setLanguage("ar");
+
 setLanguage("en");
 </script>
 
 </body>
-  </html>
+      </html>
   
