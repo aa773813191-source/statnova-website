@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official academic and professional profile of Amatalelah Abdulazez Mashhor Al-Ahdel, Researcher and Founder of STATNOVA.">
+<meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+<title>Researcher Profile | Amatalelah Al-Ahdel</title>
+
+<style>
+:root {
+  --navy: #102b50;
+  --blue: #1676b9;
+  --cyan: #54c5df;
+  --light: #eef8fc;
+  --text: #26384a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+header {
+  background: linear-gradient(130deg, var(--navy), var(--blue));
+  color: white;
+  text-align: center;
+  padding: 30px 18px;
+}
+
+.logo {
+  font-size: 29px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  color: var(--cyan);
+  margin-top: 5px;
+}
+
+.language {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+button {
+  padding: 9px 22px;
+  border: 1px solid white;
+  border-radius: 7px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button.active,
+button:hover {
+  background: white;
+  color: var(--navy);
+}
+
+.hero {
+  text-align: center;
+  padding: 55px 18px 35px;
+}
+
+.initial {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--navy), var(--cyan));
+  color: white;
+  font-size: 34px;
+  font-weight: bold;
+  border: 5px solid white;
+  box-shadow: 0 5px 18px rgba(16,43,80,.15);
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: 28px;
+  margin: 18px 0 4px;
+}
+
+.role {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 18px 40px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px rgba(16,43,80,.06);
+}
+
+h2 {
+  color: var(--navy);
+  font-size: 20px;
+  border-bottom: 2px solid var(--cyan);
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+ul {
+  padding-inline-start: 24px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.links a {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  padding: 10px 17px;
+  border-radius: 7px;
+  overflow-wrap: anywhere;
+}
+
+.links a:hover {
+  background: var(--blue);
+}
+
+.email {
+  color: var(--blue);
+  overflow-wrap: anywhere;
+}
+
+footer {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--cyan);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media(max-width:600px) {
+  .hero h1 {
+    font-size: 23px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .links {
+    flex-direction: column;
+  }
+
+  .links a {
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">STATNOVA</div>
+  <div class="tagline"
+       data-en="Turning Data into Research Insights"
+       data-ar="نحوّل البيانات إلى رؤى بحثية">
+    Turning Data into Research Insights
+  </div>
+
+  <div class="language">
+    <button id="enBtn" class="active" onclick="setLanguage('en')">English</button>
+    <button id="arBtn" onclick="setLanguage('ar')">العربية</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="initial">AA</div>
+
+  <div id="english">
+    <h1>Amatalelah Abdulazez Mashhor Al-Ahdel</h1>
+    <div class="role">Researcher | Founder of STATNOVA</div>
+    <p>Academic Researcher in Physics and Research Computing</p>
+  </div>
+
+  <div id="arabic" hidden>
+    <h1>أمة الإله عبدالعزيز مشهور الأهدل</h1>
+    <div class="role">باحثة | مؤسسة STATNOVA</div>
+    <p>باحثة أكاديمية في الفيزياء والحوسبة البحثية</p>
+  </div>
+</div>
+
+<main>
+
+<div id="englishContent">
+  <section class="card">
+    <h2>About Me</h2>
+    <p>
+      I am an academic researcher with a Master's degree in Physics.
+      My academic interests focus on scientific research, medical physics,
+      statistical analysis, and research computing.
+    </p>
+    <p>
+      I am interested in connecting scientific knowledge with practical
+      research tools that help students and researchers organize,
+      analyze, and understand their data.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Academic Background</h2>
+    <ul>
+      <li>Master's Degree in Physics.</li>
+      <li>Bachelor's Degree in Physics, University of Hodeidah.</li>
+      <li>Academic research experience in physics and scientific analysis.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Medical Physics.</li>
+      <li>Nanotechnology and its research applications.</li>
+      <li>Statistical Analysis and Scientific Data.</li>
+      <li>Research Computing and Data Processing.</li>
+      <li>Scientific Research Methods.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Research Project</h2>
+    <p>
+      My Master's research focused on improving radiotherapy effectiveness
+      using iron oxide nanoparticles, exploring their potential role in
+      cancer treatment research.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>STATNOVA — Founder</h2>
+    <p>
+      I founded STATNOVA as a research-oriented statistical analysis
+      platform designed to support students and researchers in
+      transforming data into meaningful research insights.
+    </p>
+    <p>
+      The project aims to make statistical analysis more accessible
+      through organized workflows and research-support tools.
+    </p>
+
+    <div class="links">
+      <a href="https://statnova-website.vercel.app" target="_blank" rel="noopener">
+        STATNOVA Website
+      </a>
+      <a href="https://statnova-amatalelah2.streamlit.app/" target="_blank" rel="noopener">
+        Open Analysis Platform
+      </a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Contact</h2>
+    <p>
+      Email:
+      <a class="email" href="mailto:supportstatnova@gmail.com">
+        supportstatnova@gmail.com
+      </a>
+    </p>
+  </section>
+</div>
+
+<div id="arabicContent" hidden>
+  <section class="card">
+    <h2>نبذة تعريفية</h2>
+    <p>
+      أنا باحثة أكاديمية حاصلة على درجة الماجستير في الفيزياء.
+      تتركز اهتماماتي الأكاديمية في البحث العلمي والفيزياء الطبية
+      والتحليل الإحصائي والحوسبة البحثية.
+    </p>
+    <p>
+      أهتم بالربط بين المعرفة العلمية والأدوات البحثية التطبيقية
+      التي تساعد الطلاب والباحثين على تنظيم بياناتهم وتحليلها وفهمها.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>المؤهلات الأكاديمية</h2>
+    <ul>
+      <li>درجة الماجستير في الفيزياء.</li>
+      <li>درجة البكالوريوس في الفيزياء، جامعة الحديدة.</li>
+      <li>خبرة بحثية أكاديمية في الفيزياء والتحليل العلمي.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>الاهتمامات البحثية</h2>
+    <ul>
+      <li>الفيزياء الطبية.</li>
+      <li>تقنية النانو وتطبيقاتها البحثية.</li>
+      <li>التحليل الإحصائي والبيانات العلمية.</li>
+      <li>الحوسبة البحثية ومعالجة البيانات.</li>
+      <li>مناهج البحث العلمي.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>المشروع البحثي</h2>
+    <p>
+      تناول بحث الماجستير تحسين فعالية العلاج الإشعاعي باستخدام
+      جسيمات أكسيد الحديد النانوية، ودراسة دورها المحتمل في
+      الأبحاث المتعلقة بعلاج الأورام السرطانية.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>STATNOVA — التأسيس</h2>
+    <p>
+      أسست منصة STATNOVA بوصفها منصة بحثية للتحليل الإحصائي،
+      تهدف إلى دعم الطلاب والباحثين في تحويل البيانات إلى رؤى
+      بحثية ذات معنى.
+    </p>
+    <p>
+      يسعى المشروع إلى تسهيل الوصول إلى أدوات التحليل الإحصائي
+      من خلال مسارات عمل منظمة وأدوات مساعدة للبحث العلمي.
+    </p>
+
+    <div class="links">
+      <a href="https://statnova-website.vercel.app" target="_blank" rel="noopener">
+        موقع STATNOVA
+      </a>
+      <a href="https://statnova-amatalelah2.streamlit.app/" target="_blank" rel="noopener">
+        فتح منصة التحليل
+      </a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>التواصل</h2>
+    <p>
+      البريد الإلكتروني:
+      <a class="email" href="mailto:supportstatnova@gmail.com">
+        supportstatnova@gmail.com
+      </a>
+    </p>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">Home / الرئيسية</a>
+    |
+    <a href="privacy.html">Privacy Policy / سياسة الخصوصية</a>
+    |
+    <a href="terms.html">Terms of Use / شروط الاستخدام</a>
+  </p>
+  <p>© 2026 STATNOVA. All rights reserved.</p>
+</footer>
+
+<script>
+function setLanguage(lang) {
+  const isArabic = lang === "ar";
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isArabic ? "rtl" : "ltr";
+
+  document.getElementById("english").hidden = isArabic;
+  document.getElementById("arabic").hidden = !isArabic;
+
+  document.getElementById("englishContent").hidden = isArabic;
+  document.getElementById("arabicContent").hidden = !isArabic;
+
+  document.getElementById("enBtn").classList.toggle("active", !isArabic);
+  document.getElementById("arBtn").classList.toggle("active", isArabic);
+}
+</script>
+
+</body>
+</html>
