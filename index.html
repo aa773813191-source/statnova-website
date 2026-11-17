@@ -5,15 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google" content="notranslate">
-
-<meta name="description" content="STATNOVA - A research-focused statistical analysis platform for students and researchers worldwide.">
+<meta name="description" content="STATNOVA - Statistical analysis and research solutions for students and researchers.">
 <meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+<meta name="theme-color" content="#102b50">
 
-<!-- Google Search Console verification -->
 <meta name="google-site-verification" content="U-x9JHMflaqEBaQH0DuEehuwFm8_VLvRNxCMTKzlh2Y">
 <meta name="google-site-verification" content="7Gik06ivacqJxwG5bPWtzGZbVOP8TBRjpQvDPJ8M-DI">
-
-<meta name="theme-color" content="#102b50">
 
 <title>STATNOVA | Smart Statistical Analysis</title>
 
@@ -25,14 +22,22 @@
   --light:#eef8fc;
   --white:#fff;
   --text:#263d53;
+  --muted:#718398;
+  --shadow:0 12px 35px rgba(16,43,80,.09);
 }
 
-* { box-sizing:border-box; }
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
 
 body {
-  margin:0;
   font-family:Arial,sans-serif;
   color:var(--text);
   background:#f7fbfd;
@@ -41,20 +46,38 @@ body {
 
 a { text-decoration:none; }
 
+button,.btn {
+  border:0;
+  border-radius:10px;
+  padding:13px 22px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:14px;
+  display:inline-block;
+  transition:.25s ease;
+}
+
+button:hover,.btn:hover {
+  transform:translateY(-3px);
+}
+
 header {
-  background:white;
-  padding:16px 7%;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  padding:14px 7%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  flex-wrap:wrap;
-  gap:18px;
-  box-shadow:0 2px 12px #102b5010;
+  gap:20px;
+  box-shadow:0 3px 18px rgba(16,43,80,.07);
 }
 
 .logo {
   color:var(--navy);
-  font-size:27px;
+  font-size:28px;
   font-weight:900;
   letter-spacing:2px;
   white-space:nowrap;
@@ -65,22 +88,19 @@ header {
 .header-right {
   display:flex;
   align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:16px;
+  gap:22px;
 }
 
 nav {
   display:flex;
   align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:18px;
+  gap:22px;
 }
 
 nav a {
   color:var(--navy);
   font-weight:bold;
+  font-size:14px;
   transition:.2s;
 }
 
@@ -88,31 +108,14 @@ nav a:hover { color:var(--blue); }
 
 .language-buttons {
   display:flex;
-  gap:12px;
-  align-items:center;
-  justify-content:center;
-}
-
-button,.btn {
-  border:0;
-  border-radius:9px;
-  padding:12px 20px;
-  cursor:pointer;
-  font-weight:bold;
-  font-size:14px;
-  display:inline-block;
-  transition:.25s;
-}
-
-button:hover,.btn:hover {
-  transform:translateY(-2px);
+  gap:7px;
 }
 
 .language {
   background:#e8f5fa;
   color:var(--navy);
   border:1px solid #d5eaf2;
-  min-width:105px;
+  padding:9px 13px;
 }
 
 .language.active {
@@ -120,44 +123,81 @@ button:hover,.btn:hover {
   color:white;
 }
 
+/* HERO */
+
 .hero {
-  background:linear-gradient(130deg,#102b50,#176c9f,#168fb5);
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(84,197,223,.25),transparent 30%),
+    linear-gradient(130deg,#102b50,#176c9f,#168fb5);
   color:white;
-  padding:95px 8%;
+  padding:105px 8% 100px;
   text-align:center;
 }
 
-.hero .eyebrow {
+.hero::before,
+.hero::after {
+  content:"";
+  position:absolute;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero::before {
+  width:330px;
+  height:330px;
+  top:-170px;
+  left:-100px;
+}
+
+.hero::after {
+  width:440px;
+  height:440px;
+  bottom:-300px;
+  right:-120px;
+}
+
+.hero-content {
+  position:relative;
+  z-index:1;
+  max-width:950px;
+  margin:auto;
+}
+
+.eyebrow {
+  color:#b8efff;
   font-weight:bold;
   letter-spacing:3px;
-  color:#b8efff;
+  font-size:13px;
 }
 
 .hero h1 {
-  font-size:clamp(42px,7vw,76px);
-  margin:10px 0;
-  letter-spacing:4px;
+  font-size:clamp(45px,8vw,82px);
+  letter-spacing:5px;
+  margin:12px 0;
 }
 
 .hero h2 {
   color:#aeeafa;
-  font-size:clamp(23px,4vw,34px);
+  font-size:clamp(22px,4vw,35px);
   margin:12px auto;
 }
 
 .hero p {
-  max-width:780px;
-  margin:15px auto;
-  font-size:18px;
+  max-width:760px;
+  margin:18px auto;
+  font-size:17px;
+  color:#edfaff;
 }
 
 .hero-actions {
   display:flex;
   justify-content:center;
-  align-items:center;
   flex-wrap:wrap;
-  gap:16px;
-  margin-top:30px;
+  gap:15px;
+  margin-top:32px;
 }
 
 .primary {
@@ -171,69 +211,153 @@ button:hover,.btn:hover {
   background:transparent;
 }
 
-section { padding:70px 8%; }
+/* GENERAL SECTIONS */
 
-h2.section-title {
+section { padding:82px 8%; }
+
+.section-title {
   color:var(--navy);
   text-align:center;
-  font-size:32px;
-  margin-top:0;
+  font-size:clamp(27px,4vw,36px);
+  margin-bottom:12px;
 }
 
 .intro {
-  max-width:800px;
-  margin:15px auto 35px;
+  max-width:780px;
+  margin:0 auto 42px;
   text-align:center;
-  color:#64778a;
+  color:var(--muted);
 }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:22px;
-}
+/* EXPLORE SECTION */
 
-.card {
+.explore {
   background:white;
-  padding:26px;
-  border-radius:15px;
-  border:1px solid #e1edf3;
-  box-shadow:0 8px 25px #102b5008;
-  transition:.25s;
 }
 
-.card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 12px 28px #102b5015;
+.explore-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+  margin-top:35px;
 }
 
-.card h3 { color:var(--blue); }
+.service-card {
+  position:relative;
+  background:#fff;
+  border:1px solid #e3edf4;
+  border-radius:19px;
+  padding:27px 23px;
+  min-height:245px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  box-shadow:0 8px 26px rgba(16,43,80,.045);
+  transition:.3s ease;
+}
 
-.icon { font-size:30px; }
+.service-card:hover {
+  transform:translateY(-8px);
+  border-color:var(--cyan);
+  box-shadow:var(--shadow);
+}
 
-.features { background:var(--light); }
+.service-icon {
+  width:57px;
+  height:57px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#e8f7fc,#d8f2f9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  margin-bottom:19px;
+}
+
+.service-card h3 {
+  color:var(--navy);
+  font-size:18px;
+  margin-bottom:9px;
+}
+
+.service-card p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+  flex:1;
+}
+
+.service-link {
+  color:var(--blue);
+  font-weight:bold;
+  font-size:14px;
+  margin-top:20px;
+  display:inline-block;
+}
+
+.service-card:hover .service-link {
+  color:#0b9ac2;
+}
+
+/* ABOUT */
 
 .about {
+  background:var(--light);
+  text-align:center;
+}
+
+.about-content {
+  max-width:850px;
+  margin:auto;
+}
+
+.about-content p {
+  margin:15px auto;
+}
+
+.about-highlight {
+  color:var(--blue);
+  font-weight:bold;
+}
+
+/* FOUNDER */
+
+.founder {
   background:white;
   text-align:center;
 }
 
-.about p {
-  max-width:800px;
-  margin:15px auto;
+.founder-content {
+  max-width:850px;
+  margin:auto;
 }
 
 .developer-name {
   color:var(--blue);
   font-size:21px;
+  font-weight:bold;
+  margin:18px 0 5px;
 }
 
 .profile-action { margin-top:25px; }
 
+/* CTA */
+
 .cta {
-  background:linear-gradient(120deg,#eaf8fc,#f7fbfd);
+  background:
+    radial-gradient(circle at 10% 10%,rgba(84,197,223,.16),transparent 35%),
+    linear-gradient(120deg,#eaf8fc,#f7fbfd);
   text-align:center;
 }
+
+.cta .section-title { margin-bottom:15px; }
+
+.cta p {
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+/* CONTACT */
 
 .contact {
   background:white;
@@ -246,80 +370,115 @@ h2.section-title {
   overflow-wrap:anywhere;
 }
 
+/* FOOTER */
+
 footer {
   background:var(--navy);
   color:white;
   text-align:center;
-  padding:28px 6%;
+  padding:35px 6%;
 }
 
-footer span { color:var(--cyan); }
+footer .logo { color:white; }
+
+footer .logo span { color:var(--cyan); }
 
 .footer-links {
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:22px;
-  margin:14px 0;
+  gap:24px;
+  margin:20px 0;
 }
 
 .footer-links a { color:white; }
 
 .footer-links a:hover { color:var(--cyan); }
 
-footer .copyright {
-  font-size:13px;
+.copyright {
   color:#d6e6f0;
+  font-size:13px;
+  margin-top:10px;
 }
 
-/* Arabic layout */
+/* RTL */
+
 html[dir="rtl"] body { text-align:right; }
 
 html[dir="rtl"] header,
 html[dir="rtl"] .header-right,
 html[dir="rtl"] nav,
-html[dir="rtl"] .language-buttons,
-html[dir="rtl"] .hero-actions,
-html[dir="rtl"] .footer-links {
+html[dir="rtl"] .language-buttons {
   direction:rtl;
 }
 
 html[dir="rtl"] .hero,
+html[dir="rtl"] .explore,
 html[dir="rtl"] .about,
+html[dir="rtl"] .founder,
 html[dir="rtl"] .cta,
 html[dir="rtl"] .contact,
-html[dir="rtl"] footer,
-html[dir="rtl"] .section-title,
-html[dir="rtl"] .intro {
+html[dir="rtl"] footer {
   text-align:center;
 }
 
+html[dir="rtl"] .service-card {
+  align-items:flex-start;
+  text-align:right;
+}
+
+/* TABLET */
+
+@media(max-width:1050px) {
+  .explore-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  header {
+    padding-left:4%;
+    padding-right:4%;
+  }
+
+  .header-right { gap:14px; }
+  nav { gap:14px; }
+}
+
+/* MOBILE */
+
 @media(max-width:700px) {
   header {
+    position:relative;
     flex-direction:column;
-    padding:18px 5%;
-    gap:16px;
+    padding:17px 5%;
+    gap:14px;
   }
 
   .header-right {
     width:100%;
     flex-direction:column;
-    gap:16px;
+    gap:14px;
   }
 
-  nav { gap:14px; }
+  nav {
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px 17px;
+  }
 
-  nav a { font-size:14px; }
+  nav a { font-size:13px; }
 
-  .language-buttons { gap:12px; }
+  .hero {
+    padding:72px 6%;
+  }
 
-  .hero { padding:65px 6%; }
+  .hero h1 { letter-spacing:3px; }
 
-  .hero p { font-size:16px; }
+  .hero p { font-size:15px; }
 
   .hero-actions {
     flex-direction:column;
-    width:100%;
+    align-items:center;
   }
 
   .hero-actions .btn {
@@ -328,31 +487,26 @@ html[dir="rtl"] .intro {
     text-align:center;
   }
 
-  section { padding:50px 6%; }
+  section { padding:58px 6%; }
 
-  h2.section-title { font-size:27px; }
-
-  .grid { grid-template-columns:1fr; }
-
-  .card { padding:22px; }
-
-  .developer-name {
-    font-size:18px;
-    overflow-wrap:anywhere;
+  .explore-grid {
+    grid-template-columns:1fr;
+    gap:16px;
   }
 
-  .profile-action .btn {
-    width:100%;
-    max-width:330px;
-    text-align:center;
+  .service-card {
+    min-height:unset;
+    padding:24px;
   }
 
   .footer-links { gap:15px; }
 }
 
-@media(min-width:701px) and (max-width:950px) {
-  header { justify-content:center; }
-  .grid { grid-template-columns:repeat(2,1fr); }
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after {
+    transition:none !important;
+  }
 }
 </style>
 </head>
@@ -360,232 +514,257 @@ html[dir="rtl"] .intro {
 <body>
 
 <header>
-  <div class="logo">STAT<span>NOVA</span></div>
+  <a href="#" class="logo" aria-label="STATNOVA Home">
+    STAT<span>NOVA</span>
+  </a>
 
   <div class="header-right">
     <nav>
       <a href="#about" data-en="About" data-ar="عن المنصة">About</a>
-      <a href="#features" data-en="Features" data-ar="المميزات">Features</a>
-      <a href="#developer" data-en="Founder" data-ar="المؤسسة">Founder</a>
+      <a href="#explore" data-en="Explore" data-ar="استكشف">Explore</a>
+      <a href="#founder" data-en="Founder" data-ar="المؤسسة">Founder</a>
       <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
     </nav>
 
     <div class="language-buttons">
-      <button type="button" class="language active" id="englishButton" aria-pressed="true">
-        English
-      </button>
-
-      <button type="button" class="language" id="arabicButton" aria-pressed="false">
-        العربية
-      </button>
+      <button type="button" class="language active" id="englishButton" aria-pressed="true">English</button>
+      <button type="button" class="language" id="arabicButton" aria-pressed="false">العربية</button>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<div class="hero">
-  <p class="eyebrow"
-     data-en="SMART STATISTICAL ANALYSIS PLATFORM"
-     data-ar="منصة التحليل الإحصائي الذكي">
-    SMART STATISTICAL ANALYSIS PLATFORM
-  </p>
 
-  <h1>STATNOVA</h1>
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow"
+       data-en="SMART STATISTICAL ANALYSIS PLATFORM"
+       data-ar="منصة التحليل الإحصائي الذكي">
+      SMART STATISTICAL ANALYSIS PLATFORM
+    </p>
 
-  <h2 data-en="Turning Data into Research Insights."
-      data-ar="نحوّل البيانات إلى رؤى بحثية.">
-    Turning Data into Research Insights.
-  </h2>
+    <h1>STATNOVA</h1>
 
-  <p data-en="A research-focused digital workspace designed to support students and researchers in data exploration, statistical analysis, visualization and research reporting."
-     data-ar="مساحة عمل رقمية موجّهة للبحث العلمي، تهدف إلى دعم الطلاب والباحثين في استكشاف البيانات والتحليل الإحصائي والتصورات البيانية وإعداد التقارير البحثية.">
-    A research-focused digital workspace designed to support students and researchers in data exploration, statistical analysis, visualization and research reporting.
-  </p>
+    <h2 data-en="Turn Data Into Research Insights"
+        data-ar="حوّل البيانات إلى رؤى بحثية">
+      Turn Data Into Research Insights
+    </h2>
 
-  <div class="hero-actions">
-    <a class="btn primary"
-       href="https://statnova-amatalelah2.streamlit.app/"
-       target="_blank"
-       rel="noopener"
-       data-en="OPEN STATNOVA"
-       data-ar="افتح منصة STATNOVA">
-      OPEN STATNOVA
-    </a>
+    <p data-en="A digital workspace designed to support students and researchers in exploring data, performing statistical analysis, and presenting research findings."
+       data-ar="مساحة عمل رقمية لدعم الطلاب والباحثين في استكشاف البيانات وإجراء التحليلات الإحصائية وعرض النتائج البحثية.">
+      A digital workspace designed to support students and researchers in exploring data, performing statistical analysis, and presenting research findings.
+    </p>
 
-    <a class="btn secondary"
-       href="#features"
-       data-en="EXPLORE FEATURES"
-       data-ar="اكتشف المميزات">
-      EXPLORE FEATURES
-    </a>
+    <div class="hero-actions">
+      <a class="btn primary"
+         href="https://statnova-amatalelah2.streamlit.app/"
+         target="_blank" rel="noopener"
+         data-en="START ANALYSIS →"
+         data-ar="ابدأ التحليل ←">
+        START ANALYSIS →
+      </a>
+
+      <a class="btn secondary"
+         href="#explore"
+         data-en="EXPLORE STATNOVA"
+         data-ar="استكشف STATNOVA">
+        EXPLORE STATNOVA
+      </a>
+    </div>
   </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2 class="section-title"
-      data-en="About STATNOVA"
-      data-ar="عن STATNOVA">
-    About STATNOVA
-  </h2>
-
-  <p class="intro"
-     data-en="STATNOVA is a research-focused statistical analysis platform that brings data analysis tools and research reporting workflows together in one accessible environment."
-     data-ar="STATNOVA منصة للتحليل الإحصائي الموجّه للأبحاث، تجمع أدوات تحليل البيانات ومسارات إعداد التقارير البحثية في بيئة واحدة سهلة الوصول.">
-    STATNOVA is a research-focused statistical analysis platform that brings data analysis tools and research reporting workflows together in one accessible environment.
-  </p>
 </section>
 
-<!-- FEATURES -->
-<section class="features" id="features">
+<!-- EXPLORE STATNOVA -->
+
+<section class="explore" id="explore">
   <h2 class="section-title"
-      data-en="Platform Features"
-      data-ar="مميزات المنصة">
-    Platform Features
+      data-en="Explore STATNOVA"
+      data-ar="استكشف STATNOVA">
+    Explore STATNOVA
   </h2>
 
   <p class="intro"
-     data-en="Research-oriented tools designed to support the data analysis process."
-     data-ar="أدوات بحثية صُممت لدعم مراحل تحليل البيانات.">
-    Research-oriented tools designed to support the data analysis process.
+     data-en="Discover the key areas designed to support your research and data analysis journey."
+     data-ar="اكتشف المجالات الأساسية المصممة لدعم رحلتك في البحث العلمي وتحليل البيانات.">
+    Discover the key areas designed to support your research and data analysis journey.
   </p>
 
-  <div class="grid">
+  <div class="explore-grid">
 
-    <div class="card">
-      <div class="icon">📊</div>
-      <h3 data-en="Data Exploration" data-ar="استكشاف البيانات">Data Exploration</h3>
-      <p data-en="Explore datasets, variables and data quality."
-         data-ar="استكشاف مجموعات البيانات والمتغيرات وجودة البيانات.">
-        Explore datasets, variables and data quality.
+    <a class="service-card"
+       href="https://statnova-amatalelah2.streamlit.app/"
+       target="_blank" rel="noopener"
+       aria-label="Open STATNOVA for Statistical Analysis">
+      <div class="service-icon">📊</div>
+      <h3 data-en="Statistical Analysis"
+          data-ar="التحليل الإحصائي">
+        Statistical Analysis
+      </h3>
+      <p data-en="Explore data and perform supported statistical analyses to understand your research results."
+         data-ar="استكشف البيانات ونفّذ التحليلات الإحصائية المدعومة لفهم نتائج بحثك.">
+        Explore data and perform supported statistical analyses to understand your research results.
       </p>
-    </div>
+      <span class="service-link"
+            data-en="Explore Analysis →"
+            data-ar="استكشف التحليل ←">
+        Explore Analysis →
+      </span>
+    </a>
 
-    <div class="card">
-      <div class="icon">∑</div>
-      <h3 data-en="Statistical Analysis" data-ar="التحليل الإحصائي">Statistical Analysis</h3>
-      <p data-en="Descriptive statistics and supported statistical tests."
-         data-ar="الإحصاءات الوصفية والاختبارات الإحصائية المدعومة.">
-        Descriptive statistics and supported statistical tests.
+    <a class="service-card"
+       href="https://statnova-amatalelah2.streamlit.app/"
+       target="_blank" rel="noopener"
+       aria-label="Open STATNOVA for Data Management">
+      <div class="service-icon">🗂️</div>
+      <h3 data-en="Data Management"
+          data-ar="إدارة البيانات">
+        Data Management
+      </h3>
+      <p data-en="Organize, prepare, and review research datasets for a clearer analysis workflow."
+         data-ar="نظّم بياناتك البحثية وجهّزها وراجعها لتسهيل عملية التحليل.">
+        Organize, prepare, and review research datasets for a clearer analysis workflow.
       </p>
-    </div>
+      <span class="service-link"
+            data-en="Explore Data Tools →"
+            data-ar="استكشف أدوات البيانات ←">
+        Explore Data Tools →
+      </span>
+    </a>
 
-    <div class="card">
-      <div class="icon">✦</div>
-      <h3 data-en="Smart Research Analyzer" data-ar="المحلل البحثي الذكي">Smart Research Analyzer</h3>
-      <p data-en="Research-oriented analysis and guided interpretation of results."
-         data-ar="تحليل موجّه للأبحاث وتفسير إرشادي للنتائج.">
-        Research-oriented analysis and guided interpretation of results.
+    <a class="service-card"
+       href="https://statnova-amatalelah2.streamlit.app/"
+       target="_blank" rel="noopener"
+       aria-label="Open STATNOVA for Research Support">
+      <div class="service-icon">🎓</div>
+      <h3 data-en="Research Support"
+          data-ar="دعم البحث العلمي">
+        Research Support
+      </h3>
+      <p data-en="Discover digital tools and guided workflows that support students and researchers."
+         data-ar="اكتشف الأدوات الرقمية ومسارات العمل الإرشادية الداعمة للطلاب والباحثين.">
+        Discover digital tools and guided workflows that support students and researchers.
       </p>
-    </div>
+      <span class="service-link"
+            data-en="Explore Research →"
+            data-ar="استكشف الدعم البحثي ←">
+        Explore Research →
+      </span>
+    </a>
 
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3 data-en="Visualizations" data-ar="التصورات البيانية">Visualizations</h3>
-      <p data-en="Charts and visual summaries to help explore research findings."
-         data-ar="رسوم بيانية وملخصات مرئية تساعد على استكشاف النتائج البحثية.">
-        Charts and visual summaries to help explore research findings.
+    <a class="service-card"
+       href="https://statnova-amatalelah2.streamlit.app/"
+       target="_blank" rel="noopener"
+       aria-label="Open STATNOVA for Scientific Reports">
+      <div class="service-icon">📑</div>
+      <h3 data-en="Scientific Reports"
+          data-ar="التقارير العلمية">
+        Scientific Reports
+      </h3>
+      <p data-en="Present research findings through organized statistical summaries and supported report exports."
+         data-ar="اعرض نتائج البحث من خلال ملخصات إحصائية منظمة وخيارات تصدير التقارير المدعومة.">
+        Present research findings through organized statistical summaries and supported report exports.
       </p>
-    </div>
+      <span class="service-link"
+            data-en="Explore Reports →"
+            data-ar="استكشف التقارير ←">
+        Explore Reports →
+      </span>
+    </a>
 
-    <div class="card">
-      <div class="icon">📄</div>
-      <h3 data-en="Research Reports" data-ar="التقارير البحثية">Research Reports</h3>
-      <p data-en="Research reporting and supported document export options."
-         data-ar="إعداد التقارير البحثية وخيارات تصدير المستندات المدعومة.">
-        Research reporting and supported document export options.
-      </p>
-    </div>
+  </div>
+</section>
 
-    <div class="card">
-      <div class="icon">🔬</div>
-      <h3 data-en="Research Support" data-ar="دعم البحث العلمي">Research Support</h3>
-      <p data-en="A digital workspace for students, researchers and academic projects."
-         data-ar="بيئة عمل رقمية للطلاب والباحثين والمشاريع الأكاديمية.">
-        A digital workspace for students, researchers and academic projects.
-      </p>
-    </div>
+<!-- ABOUT -->
 
+<section class="about" id="about">
+  <div class="about-content">
+    <h2 class="section-title"
+        data-en="About STATNOVA"
+        data-ar="عن STATNOVA">
+      About STATNOVA
+    </h2>
+
+    <p data-en="STATNOVA is a research-focused statistical analysis platform that brings data analysis tools and research workflows together in one accessible digital environment."
+       data-ar="STATNOVA منصة للتحليل الإحصائي الموجّه للأبحاث، تجمع أدوات تحليل البيانات ومسارات العمل البحثية في بيئة رقمية واحدة سهلة الوصول.">
+      STATNOVA is a research-focused statistical analysis platform that brings data analysis tools and research workflows together in one accessible digital environment.
+    </p>
+
+    <p class="about-highlight"
+       data-en="Our goal is to make research data analysis more accessible, organized, and useful."
+       data-ar="هدفنا جعل تحليل البيانات البحثية أكثر سهولة وتنظيماً وفائدة.">
+      Our goal is to make research data analysis more accessible, organized, and useful.
+    </p>
   </div>
 </section>
 
 <!-- FOUNDER -->
-<section class="about" id="developer">
 
-  <h2 class="section-title"
-      data-en="About the Founder"
-      data-ar="عن المؤسسة">
-    About the Founder
-  </h2>
+<section class="founder" id="founder">
+  <div class="founder-content">
+    <h2 class="section-title"
+        data-en="Meet the Founder"
+        data-ar="عن المؤسسة">
+      Meet the Founder
+    </h2>
 
-  <h3 class="developer-name"
-      data-en="Amatalelah Abdulazez Mashhor Al-Ahdel"
-      data-ar="أمة الإله عبد العزيز مشهور الأهدل">
-    Amatalelah Abdulazez Mashhor Al-Ahdel
-  </h3>
+    <h3 class="developer-name"
+        data-en="Amatalelah Abdulazez Mashhor Al-Ahdel"
+        data-ar="أمة الإله عبد العزيز مشهور الأهدل">
+      Amatalelah Abdulazez Mashhor Al-Ahdel
+    </h3>
 
-  <p class="developer-name"
-     data-en="Founder of STATNOVA | M.Sc. in Physics"
-     data-ar="مؤسسة STATNOVA | حاصلة على الماجستير في الفيزياء">
-    Founder of STATNOVA | M.Sc. in Physics
-  </p>
+    <p class="about-highlight"
+       data-en="Founder & Developer of STATNOVA | M.Sc. in Physics"
+       data-ar="مؤسسة ومطوّرة STATNOVA | ماجستير في الفيزياء">
+      Founder & Developer of STATNOVA | M.Sc. in Physics
+    </p>
 
-  <p data-en="I hold a Master's degree in Physics and am the founder of STATNOVA, a platform for statistical analysis and digital research solutions."
-     data-ar="حاصلة على درجة الماجستير في الفيزياء، ومؤسسة منصة STATNOVA للتحليل الإحصائي والحلول البحثية الرقمية.">
-    I hold a Master's degree in Physics and am the founder of STATNOVA, a platform for statistical analysis and digital research solutions.
-  </p>
+    <p data-en="I hold a Master's degree in Physics and founded STATNOVA to develop digital tools that support students and researchers in statistical analysis and scientific research."
+       data-ar="حاصلة على درجة الماجستير في الفيزياء، وأسست STATNOVA لتطوير أدوات رقمية تدعم الطلاب والباحثين في التحليل الإحصائي والبحث العلمي.">
+      I hold a Master's degree in Physics and founded STATNOVA to develop digital tools that support students and researchers in statistical analysis and scientific research.
+    </p>
 
-  <p data-en="My academic background is in Physics, with scientific interests spanning medical physics, nanotechnology, statistical analysis, and research computing."
-     data-ar="تتمحور خلفيتي الأكاديمية حول الفيزياء، وتشمل اهتماماتي العلمية الفيزياء الطبية، وتقنية النانو، والتحليل الإحصائي، والحوسبة البحثية.">
-    My academic background is in Physics, with scientific interests spanning medical physics, nanotechnology, statistical analysis, and research computing.
-  </p>
+    <p data-en="My academic background and interests include medical physics, nanotechnology, statistical analysis, and research computing."
+       data-ar="تشمل خلفيتي الأكاديمية واهتماماتي الفيزياء الطبية وتقنية النانو والتحليل الإحصائي والحوسبة البحثية.">
+      My academic background and interests include medical physics, nanotechnology, statistical analysis, and research computing.
+    </p>
 
-  <p data-en="I combine academic knowledge with computational technologies to develop digital solutions that help students and researchers organize data, analyze it, and use it in scientific studies."
-     data-ar="أجمع في عملي بين التأهيل الأكاديمي والاهتمام بالتقنيات الحاسوبية، وأسعى إلى تطوير حلول رقمية تساعد الطلاب والباحثين على تنظيم البيانات وتحليلها والاستفادة منها في الدراسات والأبحاث العلمية.">
-    I combine academic knowledge with computational technologies to develop digital solutions that help students and researchers organize data, analyze it, and use it in scientific studies.
-  </p>
-
-  <p data-en="Through founding STATNOVA, I work to transform these interests and skills into practical digital tools serving the academic and research community."
-     data-ar="ومن خلال تأسيس STATNOVA، أعمل على تحويل هذه الاهتمامات والخبرات إلى أدوات رقمية عملية تخدم المجتمع الأكاديمي والبحثي.">
-    Through founding STATNOVA, I work to transform these interests and skills into practical digital tools serving the academic and research community.
-  </p>
-
-  <div class="profile-action">
-    <a class="btn primary"
-       href="profile.html"
-       data-en="VIEW ACADEMIC PROFILE"
-       data-ar="عرض الملف الأكاديمي">
-      VIEW ACADEMIC PROFILE
-    </a>
+    <div class="profile-action">
+      <a class="btn primary"
+         href="profile.html"
+         data-en="VIEW ACADEMIC PROFILE"
+         data-ar="عرض الملف الأكاديمي">
+        VIEW ACADEMIC PROFILE
+      </a>
+    </div>
   </div>
-
 </section>
 
-<!-- CALL TO ACTION -->
+<!-- CTA -->
+
 <section class="cta">
   <h2 class="section-title"
-      data-en="Start Your Research Journey"
-      data-ar="ابدأ رحلتك البحثية">
-    Start Your Research Journey
+      data-en="Ready to Explore Your Data?"
+      data-ar="هل أنت مستعد لاستكشاف بياناتك؟">
+    Ready to Explore Your Data?
   </h2>
 
-  <p class="intro"
-     data-en="Explore STATNOVA and discover its research tools."
-     data-ar="استكشف STATNOVA وتعرّف على أدواتها البحثية.">
-    Explore STATNOVA and discover its research tools.
+  <p data-en="Start your research analysis journey with STATNOVA."
+     data-ar="ابدأ رحلتك في تحليل البيانات البحثية مع STATNOVA.">
+    Start your research analysis journey with STATNOVA.
   </p>
 
   <a class="btn primary"
      href="https://statnova-amatalelah2.streamlit.app/"
-     target="_blank"
-     rel="noopener"
-     data-en="VISIT THE PLATFORM"
-     data-ar="زيارة المنصة">
-    VISIT THE PLATFORM
+     target="_blank" rel="noopener"
+     data-en="START ANALYSIS →"
+     data-ar="ابدأ التحليل ←">
+    START ANALYSIS →
   </a>
 </section>
 
 <!-- CONTACT -->
+
 <section class="contact" id="contact">
   <h2 class="section-title"
       data-en="Contact STATNOVA"
@@ -593,9 +772,9 @@ html[dir="rtl"] .intro {
     Contact STATNOVA
   </h2>
 
-  <p data-en="For inquiries, support and collaboration:"
+  <p data-en="For inquiries, support, and collaboration:"
      data-ar="للاستفسارات والدعم والتعاون:">
-    For inquiries, support and collaboration:
+    For inquiries, support, and collaboration:
   </p>
 
   <p>
@@ -606,8 +785,9 @@ html[dir="rtl"] .intro {
 </section>
 
 <!-- FOOTER -->
+
 <footer>
-  <div class="logo" style="color:white">STAT<span>NOVA</span></div>
+  <div class="logo">STAT<span>NOVA</span></div>
 
   <p data-en="Turning Data into Research Insights."
      data-ar="نحوّل البيانات إلى رؤى بحثية.">
@@ -615,39 +795,27 @@ html[dir="rtl"] .intro {
   </p>
 
   <div class="footer-links">
-
     <a href="privacy.html"
        data-en="Privacy Policy"
-       data-ar="سياسة الخصوصية">
-      Privacy Policy
-    </a>
+       data-ar="سياسة الخصوصية">Privacy Policy</a>
 
     <a href="terms.html"
        data-en="Terms of Use"
-       data-ar="شروط الاستخدام">
-      Terms of Use
-    </a>
+       data-ar="شروط الاستخدام">Terms of Use</a>
 
     <a href="profile.html"
        data-en="Academic Profile"
-       data-ar="الملف الأكاديمي">
-      Academic Profile
-    </a>
+       data-ar="الملف الأكاديمي">Academic Profile</a>
 
     <a href="#contact"
        data-en="Contact"
-       data-ar="تواصل معنا">
-      Contact
-    </a>
-
+       data-ar="تواصل معنا">Contact</a>
   </div>
 
   <p class="copyright">
     © <span id="year"></span> STATNOVA.
     <span data-en="All rights reserved."
-          data-ar="جميع الحقوق محفوظة.">
-      All rights reserved.
-    </span>
+          data-ar="جميع الحقوق محفوظة.">All rights reserved.</span>
   </p>
 
   <p class="copyright"
@@ -660,15 +828,12 @@ html[dir="rtl"] .intro {
 <script>
 "use strict";
 
-// Current year
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-// Language controls
 const englishButton = document.getElementById("englishButton");
 const arabicButton = document.getElementById("arabicButton");
 
-// Switch website language
 function setLanguage(language) {
   const isArabic = language === "ar";
 
@@ -692,11 +857,9 @@ function setLanguage(language) {
     : "STATNOVA | Smart Statistical Analysis";
 }
 
-// Language button events
 englishButton.addEventListener("click", () => setLanguage("en"));
 arabicButton.addEventListener("click", () => setLanguage("ar"));
 
-// Default language
 setLanguage("en");
 </script>
 
