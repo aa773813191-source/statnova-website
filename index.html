@@ -1,774 +1,952 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" translate="no" class="notranslate">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google" content="notranslate">
-  <meta name="description" content="STATNOVA - Smart Statistical Analysis Platform. Turning Data into Research Insights.">
-  <meta name="theme-color" content="#071b35">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<meta name="description" content="STATNOVA - Statistical analysis and research solutions for students and researchers.">
+<meta name="author" content="Amatalelah Abdulazez Mashhor Al-Ahdel">
+<meta name="theme-color" content="#102b50">
 
-  <title>STATNOVA | Smart Statistical Analysis Platform</title>
+<meta name="google-site-verification" content="U-x9JHMflaqEBaQH0DuEehuwFm8_VLvRNxCMTKzlh2Y">
+<meta name="google-site-verification" content="7Gik06ivacqJxwG5bPWtzGZbVOP8TBRjpQvDPJ8M-DI">
 
-  <style>
-    :root {
-      --navy: #071b35;
-      --blue: #0878d1;
-      --cyan: #36c5e8;
-      --light: #f3f8fc;
-      --white: #ffffff;
-      --text: #24364b;
-      --muted: #66788d;
-      --border: #e0eaf2;
-    }
+<title>STATNOVA | Smart Statistical Analysis</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+:root {
+  --navy:#102b50;
+  --blue:#1676b9;
+  --cyan:#54c5df;
+  --light:#eef8fc;
+  --white:#fff;
+  --text:#263d53;
+  --muted:#718398;
+  --border:#e3edf4;
+  --shadow:0 12px 35px rgba(16,43,80,.09);
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.7;
-    }
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
 
-    body[dir="rtl"] {
-      font-family: Tahoma, Arial, sans-serif;
-    }
+body {
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:#f7fbfd;
+  line-height:1.7;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a { text-decoration:none; }
 
-    button {
-      font: inherit;
-      cursor: pointer;
-    }
+button,.btn {
+  border:0;
+  border-radius:10px;
+  padding:13px 22px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:14px;
+  display:inline-block;
+  transition:.25s ease;
+}
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
+button:hover,.btn:hover {
+  transform:translateY(-3px);
+}
 
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 17px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 3px 15px #00152b30;
-    }
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline:3px solid var(--cyan);
+  outline-offset:4px;
+}
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-    }
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  padding:14px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  box-shadow:0 3px 18px rgba(16,43,80,.07);
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--cyan);
-    }
+.logo {
+  color:var(--navy);
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:2px;
+  white-space:nowrap;
+}
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
+.logo span { color:var(--cyan); }
 
-    .nav-links a {
-      color: white;
-      font-size: 14px;
-    }
+.header-right {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
 
-    .nav-links a:hover {
-      color: var(--cyan);
-    }
+nav {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
 
-    .language-btn {
-      background: transparent;
-      border: 1px solid var(--cyan);
-      color: white;
-      border-radius: 20px;
-      padding: 7px 15px;
-    }
+nav a {
+  color:var(--navy);
+  font-weight:bold;
+  font-size:14px;
+  transition:.2s;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #071b35, #0b4778);
-      color: white;
-      text-align: center;
-      padding: 100px 20px 90px;
-    }
+nav a:hover { color:var(--blue); }
 
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 65px);
-      letter-spacing: 3px;
-      color: var(--cyan);
-      margin-bottom: 12px;
-    }
+.language-buttons {
+  display:flex;
+  gap:7px;
+}
 
-    .hero h2 {
-      font-size: clamp(21px, 3vw, 32px);
-      margin-bottom: 18px;
-    }
+.language {
+  background:#e8f5fa;
+  color:var(--navy);
+  border:1px solid #d5eaf2;
+  padding:9px 13px;
+}
 
-    .hero p {
-      max-width: 750px;
-      margin: 0 auto 28px;
-      color: #d6e8f7;
-      font-size: 17px;
-    }
+.language.active {
+  background:var(--navy);
+  color:white;
+}
 
-    .tagline {
-      color: var(--cyan);
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+/* HERO */
 
-    .btn {
-      display: inline-block;
-      background: var(--cyan);
-      color: var(--navy);
-      padding: 13px 28px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: .25s;
-    }
+.hero {
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(84,197,223,.25),transparent 30%),
+    linear-gradient(130deg,#102b50,#176c9f,#168fb5);
+  color:white;
+  padding:105px 8% 100px;
+  text-align:center;
+}
 
-    .btn:hover {
-      background: white;
-      transform: translateY(-3px);
-    }
+.hero::before,
+.hero::after {
+  content:"";
+  position:absolute;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  pointer-events:none;
+}
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid white;
-      color: white;
-      margin-inline-start: 10px;
-    }
+.hero::before {
+  width:330px;
+  height:330px;
+  top:-170px;
+  left:-100px;
+}
 
-    section {
-      padding: 75px 0;
-    }
+.hero::after {
+  width:440px;
+  height:440px;
+  bottom:-300px;
+  right:-120px;
+}
 
-    .section-heading {
-      text-align: center;
-      margin-bottom: 42px;
-    }
+.hero-content {
+  position:relative;
+  z-index:1;
+  max-width:950px;
+  margin:auto;
+}
 
-    .section-heading h2 {
-      color: var(--navy);
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.eyebrow {
+  color:#b8efff;
+  font-weight:bold;
+  letter-spacing:3px;
+  font-size:13px;
+}
 
-    .section-heading p {
-      color: var(--muted);
-      max-width: 750px;
-      margin: auto;
-    }
+.hero h1 {
+  font-size:clamp(45px,8vw,82px);
+  letter-spacing:5px;
+  margin:12px 0;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 23px;
-    }
+.hero h2 {
+  color:#aeeafa;
+  font-size:clamp(22px,4vw,35px);
+  margin:12px auto;
+}
 
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      padding: 27px;
-      box-shadow: 0 7px 24px #0b31500a;
-      transition: .25s;
-    }
+.hero p {
+  max-width:760px;
+  margin:18px auto;
+  font-size:17px;
+  color:#edfaff;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px #0b315018;
-    }
+.hero-actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:32px;
+}
 
-    .card-icon {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
+.primary {
+  background:var(--cyan);
+  color:var(--navy);
+}
 
-    .card h3 {
-      color: var(--blue);
-      font-size: 21px;
-      margin-bottom: 12px;
-    }
+.secondary {
+  border:1px solid white;
+  color:white;
+  background:transparent;
+}
 
-    .card p {
-      color: var(--muted);
-      margin-bottom: 15px;
-    }
+.primary:hover {
+  background:#8ce3f3;
+}
 
-    .card ul {
-      padding-inline-start: 22px;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
+.secondary:hover {
+  background:rgba(255,255,255,.12);
+}
 
-    .card li {
-      margin-bottom: 7px;
-    }
+/* GENERAL SECTIONS */
 
-    .card .btn {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
+section { padding:82px 8%; }
 
-    .note {
-      background: #e8f5fc;
-      border-inline-start: 4px solid var(--blue);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 28px;
-    }
+.section-title {
+  color:var(--navy);
+  text-align:center;
+  font-size:clamp(27px,4vw,36px);
+  margin-bottom:12px;
+}
 
-    .workflow {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+.intro {
+  max-width:780px;
+  margin:0 auto 42px;
+  text-align:center;
+  color:var(--muted);
+}
 
-    .step {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      padding: 22px;
-      text-align: center;
-    }
+/* EXPLORE */
 
-    .step-number {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 12px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--cyan);
-      font-weight: bold;
-      font-size: 19px;
-    }
+.explore {
+  background:white;
+}
 
-    .why {
-      background: white;
-    }
+.explore-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  margin-top:35px;
+}
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
+.service-card {
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:19px;
+  padding:27px 25px;
+  box-shadow:0 8px 26px rgba(16,43,80,.045);
+  transition:.3s ease;
+  min-width:0;
+}
 
-    .why-item {
-      background: var(--light);
-      padding: 22px;
-      border-radius: 12px;
-    }
+.service-card:hover,
+.service-card[open] {
+  border-color:var(--cyan);
+  box-shadow:var(--shadow);
+}
 
-    .developer {
-      text-align: center;
-      background: linear-gradient(135deg, #071b35, #0b4778);
-      color: white;
-    }
+.service-card[open] {
+  background:#fcfeff;
+}
 
-    .developer h2 {
-      color: var(--cyan);
-      margin-bottom: 15px;
-    }
+.service-card summary {
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:flex-start;
+  gap:17px;
+}
 
-    .developer p {
-      max-width: 700px;
-      margin: 10px auto;
-      color: #dceaf5;
-    }
+.service-card summary::-webkit-details-marker {
+  display:none;
+}
 
-    .developer-name {
-      font-size: 23px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
+.service-icon {
+  width:57px;
+  height:57px;
+  min-width:57px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#e8f7fc,#d8f2f9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+}
 
-    .contact {
-      text-align: center;
-    }
+.card-heading {
+  flex:1;
+}
 
-    footer {
-      background: var(--navy);
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-    }
+.service-card h3 {
+  color:var(--navy);
+  font-size:19px;
+  margin-bottom:6px;
+}
 
-    footer p {
-      margin: 7px 0;
-      color: #c4d5e5;
-    }
+.service-card p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 15px 0;
-    }
+.expand-indicator {
+  color:var(--blue);
+  font-size:25px;
+  font-weight:bold;
+  transition:.25s;
+  line-height:1;
+}
 
-    .footer-links a:hover {
-      color: var(--cyan);
-    }
+.service-card[open] .expand-indicator {
+  transform:rotate(45deg);
+}
 
-    @media (max-width: 760px) {
-      .navbar {
-        flex-direction: column;
-      }
+.card-details {
+  border-top:1px solid var(--border);
+  margin-top:23px;
+  padding-top:20px;
+  animation:showDetails .3s ease;
+}
 
-      .nav-links {
-        justify-content: center;
-        gap: 13px;
-      }
+@keyframes showDetails {
+  from { opacity:0; transform:translateY(-7px); }
+  to { opacity:1; transform:translateY(0); }
+}
 
-      .cards,
-      .workflow,
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
+.card-details h4 {
+  color:var(--navy);
+  font-size:15px;
+  margin-bottom:10px;
+}
 
-      .hero {
-        padding: 75px 18px;
-      }
+.service-list {
+  padding-left:20px;
+  margin-bottom:20px;
+}
 
-      section {
-        padding: 55px 0;
-      }
+.service-list li {
+  color:var(--text);
+  font-size:14px;
+  margin:7px 0;
+}
 
-      .btn-outline {
-        margin: 10px 0 0;
-      }
-    }
-  </style>
+.card-action {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.card-note {
+  font-size:12px;
+  color:var(--muted);
+}
+
+.service-button {
+  background:var(--navy);
+  color:white;
+  padding:11px 17px;
+}
+
+.service-button:hover {
+  background:var(--blue);
+}
+
+/* WORKFLOW */
+
+.workflow {
+  background:var(--light);
+}
+
+.workflow-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+  margin-top:38px;
+}
+
+.workflow-step {
+  background:white;
+  border:1px solid #e0edf3;
+  border-radius:16px;
+  padding:23px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(16,43,80,.035);
+}
+
+.step-number {
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  margin:0 auto 13px;
+  background:var(--navy);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.workflow-step h3 {
+  color:var(--navy);
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.workflow-step p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* WHY STATNOVA */
+
+.why {
+  background:white;
+}
+
+.why-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  max-width:950px;
+  margin:35px auto 0;
+}
+
+.why-item {
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+  padding:20px;
+  background:#f8fcfe;
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+
+.why-icon {
+  font-size:25px;
+  min-width:35px;
+}
+
+.why-item h3 {
+  color:var(--navy);
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.why-item p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ABOUT */
+
+.about {
+  background:var(--light);
+  text-align:center;
+}
+
+.about-content {
+  max-width:850px;
+  margin:auto;
+}
+
+.about-content p {
+  margin:15px auto;
+}
+
+.about-highlight {
+  color:var(--blue);
+  font-weight:bold;
+}
+
+/* FOUNDER */
+
+.founder {
+  background:white;
+  text-align:center;
+}
+
+.founder-content {
+  max-width:850px;
+  margin:auto;
+}
+
+.developer-name {
+  color:var(--blue);
+  font-size:21px;
+  font-weight:bold;
+  margin:18px 0 5px;
+}
+
+.profile-action { margin-top:25px; }
+
+/* CTA */
+
+.cta {
+  background:
+    radial-gradient(circle at 10% 10%,rgba(84,197,223,.16),transparent 35%),
+    linear-gradient(120deg,#eaf8fc,#f7fbfd);
+  text-align:center;
+}
+
+.cta .section-title { margin-bottom:15px; }
+
+.cta p {
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+/* CONTACT */
+
+.contact {
+  background:white;
+  text-align:center;
+}
+
+.contact a {
+  color:var(--blue);
+  font-weight:bold;
+  overflow-wrap:anywhere;
+}
+
+/* FOOTER */
+
+footer {
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:35px 6%;
+}
+
+footer .logo { color:white; }
+
+footer .logo span { color:var(--cyan); }
+
+.footer-links {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:24px;
+  margin:20px 0;
+}
+
+.footer-links a { color:white; }
+
+.footer-links a:hover { color:var(--cyan); }
+
+.copyright {
+  color:#d6e6f0;
+  font-size:13px;
+  margin-top:10px;
+}
+
+/* RTL */
+
+html[dir="rtl"] body { text-align:right; }
+
+html[dir="rtl"] header,
+html[dir="rtl"] .header-right,
+html[dir="rtl"] nav,
+html[dir="rtl"] .language-buttons {
+  direction:rtl;
+}
+
+html[dir="rtl"] .hero,
+html[dir="rtl"] .explore,
+html[dir="rtl"] .workflow,
+html[dir="rtl"] .why,
+html[dir="rtl"] .about,
+html[dir="rtl"] .founder,
+html[dir="rtl"] .cta,
+html[dir="rtl"] .contact,
+html[dir="rtl"] footer {
+  text-align:center;
+}
+
+html[dir="rtl"] .service-card summary {
+  direction:rtl;
+  text-align:right;
+}
+
+html[dir="rtl"] .service-list {
+  padding-left:0;
+  padding-right:20px;
+}
+
+html[dir="rtl"] .card-details,
+html[dir="rtl"] .card-details h4 {
+  text-align:right;
+}
+
+html[dir="rtl"] .why-item {
+  direction:rtl;
+  text-align:right;
+}
+
+/* TABLET */
+
+@media(max-width:1050px) {
+  header {
+    padding-left:4%;
+    padding-right:4%;
+  }
+
+  .header-right { gap:14px; }
+  nav { gap:14px; }
+
+  .workflow-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+  header {
+    position:relative;
+    flex-direction:column;
+    padding:17px 5%;
+    gap:14px;
+  }
+
+  .header-right {
+    width:100%;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  nav {
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px 17px;
+  }
+
+  nav a { font-size:13px; }
+
+  .hero { padding:72px 6%; }
+
+  .hero h1 { letter-spacing:3px; }
+
+  .hero p { font-size:15px; }
+
+  .hero-actions {
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-actions .btn {
+    width:100%;
+    max-width:330px;
+    text-align:center;
+  }
+
+  section { padding:58px 6%; }
+
+  .explore-grid,
+  .workflow-grid,
+  .why-grid {
+    grid-template-columns:1fr;
+  }
+
+  .service-card { padding:22px; }
+
+  .service-card summary { gap:12px; }
+
+  .service-card h3 { font-size:17px; }
+
+  .card-action {
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .service-button {
+    text-align:center;
+    width:100%;
+  }
+
+  .footer-links { gap:15px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+
+  *,*::before,*::after {
+    transition:none !important;
+    animation:none !important;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container navbar">
-    <a href="#" class="logo">STATNOVA</a>
+  <a href="#" class="logo" aria-label="STATNOVA Home">
+    STAT<span>NOVA</span>
+  </a>
 
-    <nav class="nav-links">
+  <div class="header-right">
+    <nav>
       <a href="#about" data-en="About" data-ar="عن المنصة">About</a>
-      <a href="#features" data-en="Features" data-ar="الخدمات">Features</a>
-      <a href="#workflow" data-en="How It Works" data-ar="كيف تعمل">How It Works</a>
-      <a href="#developer" data-en="Developer" data-ar="المطوّرة">Developer</a>
-      <a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a>
-      <button class="language-btn" onclick="toggleLanguage()">العربية</button>
+      <a href="#explore" data-en="Explore" data-ar="استكشف">Explore</a>
+      <a href="#founder" data-en="Founder" data-ar="المؤسسة">Founder</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
     </nav>
+
+    <div class="language-buttons">
+      <button type="button" class="language active" id="englishButton" aria-pressed="true">English</button>
+      <button type="button" class="language" id="arabicButton" aria-pressed="false">العربية</button>
+    </div>
   </div>
 </header>
 
-<main>
+<!-- HERO -->
 
-  <section class="hero" id="about">
-    <div class="container">
-      <div class="tagline"
-        data-en="Smart Statistical Analysis Platform"
-        data-ar="منصة بحثية إحصائية بطموح عالمي">
-        Smart Statistical Analysis Platform
-      </div>
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow"
+       data-en="SMART STATISTICAL ANALYSIS PLATFORM"
+       data-ar="منصة التحليل الإحصائي الذكي">
+      SMART STATISTICAL ANALYSIS PLATFORM
+    </p>
 
-      <h1>STATNOVA</h1>
+    <h1>STATNOVA</h1>
 
-      <h2
-        data-en="Turning Data into Research Insights."
-        data-ar="نحوّل البيانات إلى رؤى بحثية.">
-        Turning Data into Research Insights.
-      </h2>
+    <h2 data-en="Turn Data Into Research Insights"
+        data-ar="حوّل البيانات إلى رؤى بحثية">
+      Turn Data Into Research Insights
+    </h2>
 
-      <p
-        data-en="From unstructured research data to organized datasets, statistical evidence, research review and export."
-        data-ar="منصة متكاملة تبدأ بتنظيم البيانات وفحصها، ثم التحليل والتفسير والمراجعة وإعداد التقارير.">
-        From unstructured research data to organized datasets,
-        statistical evidence, research review and export.
-      </p>
+    <p data-en="A digital workspace designed to support students and researchers in exploring data, performing statistical analysis, and presenting research findings."
+       data-ar="مساحة عمل رقمية لدعم الطلاب والباحثين في استكشاف البيانات وإجراء التحليلات الإحصائية وعرض النتائج البحثية.">
+      A digital workspace designed to support students and researchers in exploring data, performing statistical analysis, and presenting research findings.
+    </p>
 
-      <a class="btn"
+    <div class="hero-actions">
+      <a class="btn primary"
          href="https://statnova-amatalelah2.streamlit.app/"
-         target="_blank"
-         rel="noopener"
-         data-en="Open STATNOVA"
-         data-ar="افتح منصة STATNOVA">
-        Open STATNOVA
+         target="_blank" rel="noopener"
+         data-en="START ANALYZING →"
+         data-ar="ابدأ التحليل ←">
+        START ANALYZING →
       </a>
 
-      <a class="btn btn-outline"
-         href="#features"
-         data-en="Explore Features"
-         data-ar="استكشف الخدمات">
-        Explore Features
+      <a class="btn secondary"
+         href="#explore"
+         data-en="EXPLORE FEATURES"
+         data-ar="استكشف المميزات">
+        EXPLORE FEATURES
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="features">
-    <div class="container">
+<!-- EXPLORE STATNOVA -->
 
-      <div class="section-heading">
-        <h2 data-en="Explore STATNOVA"
-            data-ar="استكشف خدمات STATNOVA">
-          Explore STATNOVA
-        </h2>
+<section class="explore" id="explore">
+  <h2 class="section-title"
+      data-en="Explore STATNOVA"
+      data-ar="استكشف STATNOVA">
+    Explore STATNOVA
+  </h2>
 
-        <p
-          data-en="One Platform. Two Analysis Modes. A Complete Research Journey."
-          data-ar="منصة واحدة، ونمطان للتحليل، ورحلة بحثية متكاملة.">
-          One Platform. Two Analysis Modes. A Complete Research Journey.
-        </p>
-      </div>
+  <p class="intro"
+     data-en="One platform. Four connected areas. A research journey from data preparation to meaningful results. Select a card to discover its tools."
+     data-ar="منصة واحدة وأربعة مجالات مترابطة. رحلة بحثية تبدأ من تجهيز البيانات وتنتهي بنتائج مفهومة. اضغط على البطاقة لاكتشاف أدواتها.">
+    One platform. Four connected areas. A research journey from data preparation to meaningful results. Select a card to discover its tools.
+  </p>
 
-      <div class="cards">
+  <div class="explore-grid">
 
-        <article class="card">
-          <div class="card-icon">🧠</div>
+    <!-- SMART ANALYSIS -->
+
+    <details class="service-card">
+      <summary>
+        <div class="service-icon">🧠</div>
+        <div class="card-heading">
           <h3 data-en="Smart Analysis"
               data-ar="التحليل الذكي">
             Smart Analysis
           </h3>
-
-          <p
-            data-en="Smart Research Analyzer provides analytical suggestions to support the researcher's decisions."
-            data-ar="يقدّم محلل الأبحاث الذكي اقتراحات تحليلية تساعد الباحث في اتخاذ قراراته.">
-            Smart Research Analyzer provides analytical suggestions
-            to support the researcher's decisions.
+          <p data-en="AI-assisted analytical suggestions to guide researchers through their analysis decisions."
+             data-ar="اقتراحات تحليلية ذكية تساعد الباحث على اختيار الخطوات والتحليلات المناسبة.">
+            AI-assisted analytical suggestions to guide researchers through their analysis decisions.
           </p>
+        </div>
+        <span class="expand-indicator" aria-hidden="true">+</span>
+      </summary>
 
-          <ul>
-            <li data-en="Smart Research Analyzer"
-                data-ar="محلل الأبحاث الذكي">
-              Smart Research Analyzer
-            </li>
-            <li data-en="Suggested statistical analyses"
-                data-ar="اقتراح التحليلات الإحصائية المناسبة">
-              Suggested statistical analyses
-            </li>
-            <li data-en="Guidance for selecting statistical tests"
-                data-ar="إرشادات لاختيار الاختبارات الإحصائية">
-              Guidance for selecting statistical tests
-            </li>
-          </ul>
+      <div class="card-details">
+        <h4 data-en="Smart Research Analyzer"
+            data-ar="المحلل البحثي الذكي">
+          Smart Research Analyzer
+        </h4>
 
-          <a class="btn"
+        <ul class="service-list">
+          <li data-en="Suggested statistical analyses based on the research data."
+              data-ar="اقتراح التحليلات الإحصائية بناءً على بيانات البحث.">
+            Suggested statistical analyses based on the research data.
+          </li>
+          <li data-en="Guidance for selecting suitable statistical tests."
+              data-ar="إرشادات لاختيار الاختبارات الإحصائية المناسبة.">
+            Guidance for selecting suitable statistical tests.
+          </li>
+          <li data-en="Analytical recommendations to support research decisions."
+              data-ar="توصيات تحليلية لدعم قرارات الباحث.">
+            Analytical recommendations to support research decisions.
+          </li>
+          <li data-en="The researcher reviews suggestions and makes the final decision."
+              data-ar="يراجع الباحث الاقتراحات ويتخذ القرار النهائي.">
+            The researcher reviews suggestions and makes the final decision.
+          </li>
+        </ul>
+
+        <div class="card-action">
+          <span class="card-note"
+                data-en="Smart mode recommends; the researcher decides."
+                data-ar="الوضع الذكي يقترح، والباحث يقرر.">
+            Smart mode recommends; the researcher decides.
+          </span>
+
+          <a class="btn service-button"
              href="https://statnova-amatalelah2.streamlit.app/"
-             target="_blank"
-             rel="noopener"
-             data-en="Explore Smart Analysis"
-             data-ar="استكشف التحليل الذكي">
-            Explore Smart Analysis
+             target="_blank" rel="noopener"
+             data-en="OPEN STATNOVA →"
+             data-ar="افتح STATNOVA ←">
+            OPEN STATNOVA →
           </a>
-        </article>
+        </div>
+      </div>
+    </details>
 
-        <article class="card">
-          <div class="card-icon">📊</div>
+    <!-- STANDARD ANALYSIS -->
+
+    <details class="service-card">
+      <summary>
+        <div class="service-icon">📊</div>
+        <div class="card-heading">
           <h3 data-en="Standard Analysis"
               data-ar="التحليل القياسي">
             Standard Analysis
           </h3>
-
-          <p
-            data-en="The researcher selects the variables, statistical tests and analyses according to the research design."
-            data-ar="يختار الباحث المتغيرات والاختبارات والتحليلات بنفسه وفقًا لتصميم البحث.">
-            The researcher selects the variables, statistical tests
-            and analyses according to the research design.
+          <p data-en="Direct analytical control for researchers who prefer to select their own variables, methods, and statistical tests."
+             data-ar="تحكم مباشر للباحثين الذين يفضلون اختيار المتغيرات والأساليب والاختبارات الإحصائية بأنفسهم.">
+            Direct analytical control for researchers who prefer to select their own variables, methods, and statistical tests.
           </p>
+        </div>
+        <span class="expand-indicator" aria-hidden="true">+</span>
+      </summary>
 
-          <ul>
-            <li data-en="Descriptive Statistics"
-                data-ar="الإحصاءات الوصفية">
-              Descriptive Statistics
-            </li>
-            <li data-en="Statistical Tests"
-                data-ar="الاختبارات الإحصائية">
-              Statistical Tests
-            </li>
-            <li data-en="Relationships & Regression"
-                data-ar="العلاقات والانحدار">
-              Relationships & Regression
-            </li>
-            <li data-en="Visualizations"
-                data-ar="التمثيلات البيانية">
-              Visualizations
-            </li>
-          </ul>
+      <div class="card-details">
+        <h4 data-en="Available analysis areas"
+            data-ar="مجالات التحليل المتاحة">
+          Available analysis areas
+        </h4>
 
-          <a class="btn"
+        <ul class="service-list">
+          <li data-en="Descriptive Statistics"
+              data-ar="الإحصاء الوصفي">
+            Descriptive Statistics
+          </li>
+          <li data-en="Statistical Tests"
+              data-ar="الاختبارات الإحصائية">
+            Statistical Tests
+          </li>
+          <li data-en="Relationships & Regression"
+              data-ar="العلاقات والانحدار">
+            Relationships & Regression
+          </li>
+          <li data-en="Visualizations and data patterns"
+              data-ar="الرسوم البيانية وأنماط البيانات">
+            Visualizations and data patterns
+          </li>
+        </ul>
+
+        <div class="card-action">
+          <span class="card-note"
+                data-en="Standard mode gives the researcher direct control."
+                data-ar="الوضع القياسي يمنح الباحث التحكم المباشر.">
+            Standard mode gives the researcher direct control.
+          </span>
+
+          <a class="btn service-button"
              href="https://statnova-amatalelah2.streamlit.app/"
-             target="_blank"
-             rel="noopener"
-             data-en="Explore Standard Analysis"
-             data-ar="استكشف التحليل القياسي">
-            Explore Standard Analysis
+             target="_blank" rel="noopener"
+             data-en="OPEN STATNOVA →"
+             data-ar="افتح STATNOVA ←">
+            OPEN STATNOVA →
           </a>
-        </article>
+        </div>
+      </div>
+    </details>
 
-        <article class="card">
-          <div class="card-icon">🗂️</div>
+    <!-- DATA MANAGEMENT -->
+
+    <details class="service-card">
+      <summary>
+        <div class="service-icon">🗂️</div>
+        <div class="card-heading">
           <h3 data-en="Data Management"
               data-ar="إدارة البيانات">
             Data Management
           </h3>
-
-          <p
-            data-en="Prepare, organize and inspect research data before statistical analysis."
-            data-ar="جهّز بياناتك البحثية ونظّمها وافحصها قبل إجراء التحليل الإحصائي.">
-            Prepare, organize and inspect research data
-            before statistical analysis.
-          </p>
-
-          <ul>
-            <li data-en="Organize Word Data"
-                data-ar="تنظيم بيانات ملفات Word">
-              Organize Word Data
-            </li>
-            <li data-en="Upload & Explore Excel or CSV"
-                data-ar="رفع واستكشاف ملفات Excel وCSV">
-              Upload & Explore Excel or CSV
-            </li>
-            <li data-en="Data Quality"
-                data-ar="فحص جودة البيانات">
-              Data Quality
-            </li>
-            <li data-en="Review tables and missing values"
-                data-ar="مراجعة الجداول والقيم المفقودة">
-              Review tables and missing values
-            </li>
-          </ul>
-
-          <a class="btn"
-             href="https://statnova-amatalelah2.streamlit.app/"
-             target="_blank"
-             rel="noopener"
-             data-en="Explore Data Management"
-             data-ar="استكشف إدارة البيانات">
-            Explore Data Management
-          </a>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">📑</div>
-          <h3 data-en="Reports & Insights"
-              data-ar="التقارير والرؤى">
-            Reports & Insights
-          </h3>
-
-          <p
-            data-en="Understand findings, review results and prepare research reports."
-            data-ar="افهم النتائج وراجعها وجهّز تقاريرك البحثية.">
-            Understand findings, review results and prepare research reports.
-          </p>
-
-          <ul>
-            <li data-en="Results Interpretation"
-                data-ar="تفسير النتائج">
-              Results Interpretation
-            </li>
-            <li data-en="Research Review"
-                data-ar="مراجعة البحث">
-              Research Review
-            </li>
-            <li data-en="Recommendations"
-                data-ar="التوصيات">
-              Recommendations
-            </li>
-            <li data-en="Reports & Export"
-                data-ar="التقارير وتصدير النتائج">
-              Reports & Export
-            </li>
-          </ul>
-
-          <a class="btn"
-             href="https://statnova-amatalelah2.streamlit.app/"
-             target="_blank"
-             rel="noopener"
-             data-en="Explore Reports"
-             data-ar="استكشف التقارير">
-            Explore Reports
-          </a>
-        </article>
-
-      </div>
-
-      <div class="note">
-        <strong
-          data-en="Two Analysis Modes:"
-          data-ar="نمطان للتحليل:">
-          Two Analysis Modes:
-        </strong>
-
-        <span
-          data-en="Standard and Smart use the same scientific capabilities. Standard lets the researcher choose analyses, while Smart recommends analyses. Uploaded datasets and analysis histories are separate between the two modes."
-          data-ar="يستخدم التحليل القياسي والذكي القدرات العلمية نفسها. يختار الباحث التحليلات في النمط القياسي، بينما يقترحها النمط الذكي. وتظل مجموعات البيانات وسجلات التحليل منفصلة بين النمطين.">
-          Standard and Smart use the same scientific capabilities.
-          Standard lets the researcher choose analyses, while Smart
-          recommends analyses. Uploaded datasets and analysis histories
-          are separate between the two modes.
-        </span>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="workflow">
-    <div class="container">
-      <div class="section-heading">
-        <h2 data-en="How STATNOVA Works"
-            data-ar="كيف تعمل STATNOVA">
-          How STATNOVA Works
-        </h2>
-
-        <p
-          data-en="A structured journey from raw data to research insights."
-          data-ar="رحلة منظمة تبدأ بالبيانات وتنتهي بالرؤى البحثية.">
-          A structured journey from raw data to research insights.
-        </p>
-      </div>
-
-      <div class="workflow">
-
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3 data-en="Organize or Upload"
-              data-ar="نظّم البيانات أو ارفعها">
-            Organize or Upload
-          </h3>
-        </div>
-
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3 data-en="Check Data Quality"
-              data-ar="افحص جودة البيانات">
-            Check Data Quality
-          </h3>
-        </div>
-
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3 data-en="Analyze"
-              data-ar="حلّل البيانات">
-            Analyze
-          </h3>
-        </div>
-
-        <div class="step">
-          <div class="step-number">4</div>
-          <h3 data-en="Interpret Results"
-              data-ar="فسّر النتائج">
-            Interpret Results
-          </h3>
-        </div>
-
-        <div class="step">
-          <div class="step-number">5</div>
-          <h3 data-en="Review Findings"
-              data-ar="راجع النتائج">
-            Review Findings
-          </h3>
-        </div>
-
-        <div class="step">
-          <div class="step-number">6</div>
-          <h3 data-en="Export Reports"
-              data-ar="صدّر التقارير">
-            Export Reports
-          </h3>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="why">
-    <div class="container">
-
-      <div class="section-heading">
-        <h2 data-en="Why STATNOVA?"
-            data-ar="لماذا STATNOVA؟">
-          Why STATNOVA?
-        </h2>
-
-        <p
-          data-en="Designed to support researchers throughout the data analysis journey."
-          data-ar="صُممت لدعم الباحثين في مختلف مراحل رحلة تحليل البيانات.">
-          Designed to support researchers throughout the data analysis journey.
-        </p>
-      </div>
-
-      <div class="why-grid">
-
-        <div class="why-item">
-          <h3 data-en="Integrated Research Workflow"
-              data-ar="سير عمل بحثي متكامل">
-            Integrated Research Workflow
-          </h3>
-          <p data-en="Organizing, analyzing, reviewing and reporting in one platform."
-             data-ar="تنظيم البيانات وتحليلها ومراجعتها وإعداد التقارير ضمن منصة واحدة.">
-            Organizing, analyzing, reviewing and reporting in one platform.
+          <p data-en="Organize, upload, explore, and review research datasets before starting statistical analysis."
+             data-ar="نظّم بياناتك البحثية وارفعها واستكشفها وراجعها قبل بدء التحليل الإحصائي.">
+            Organize, upload, explore, and review research datasets before starting statistical analysis.
           </p>
         </div>
+        <span class="expand-indicator" aria-hidden="true">+</span>
+      </summary>
 
-        <div class="why-item">
-          <h3 data-en="Flexible Analysis"
-              data-ar="مرونة في التحليل">
-            Flexible Analysis
-          </h3>
-          <p data-en="Choose between researcher-directed Standard Analysis and Smart suggestions."
-             data-ar="اختر بين التحليل القياسي الذي يقوده الباحث والاقتراحات الذكية.">
-            Choose between researcher-directed Standard Analysis
-            and Smart suggestions.
-          </p>
-        </div>
+      <div class="card-details">
+        <h4 data-en="Data preparation tools"
+            data-ar="أدوات تجهيز البيانات">
+          Data preparation tools
+        </h4>
 
-        <div class="why-item">
-          <h3 data-en="Data Organization"
-              data-ar="تنظيم البيانات">
-            Data Organization
-          </h3>
-          <p data-en="Transform unstructured research information into reviewable tables."
-             data-ar="تحويل المعلومات البحثية غير المنظمة إلى جداول قابلة للمراجعة.">
-            Transform unstructured research information into reviewable tables.
-          </p>
-        </div>
-
-        <div class="why-item">
-          <h3 data-en="Researcher in Control"
-              data-ar="الباحث صاحب القرار">
-            Researcher in Control
-          </h3>
-          <p data-en="Analytical suggestions support the researcher; scientific decisions remain with the researcher."
-             data-ar="تدعم الاقتراحات التحليلية الباحث، وتظل القرارات العلمية بيده.">
-            Analytical suggestions support the researcher;
-            scientific decisions remain with the researcher.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="developer" id="developer">
-    <div class="container">
-      <h2 data-en="Meet the Developer"
-    
+        <ul class="service-list">
+          <li data-en="Organize Word Data into structured tables."
+              data-ar="تنظيم بيانات Word وتحويلها إلى جداول مرتبة.">
+            Organize Word Data into structured tables.
+          </li>
+          <li data-en="Upload and Explore Excel or CSV datasets."
+              data-ar="رفع واستكشاف ملفات Excel وCSV.">
+            Upload and Explore Excel or CSV datasets.
+          </li>
+          <li data-en="Review variables, records, and dataset structure."
+              data-ar="مراجعة المتغيرات والسجلات وبنية مجموعة البيانات.">
+            Review variables, records, and dataset structure.
+          </li>
+          <li data-en="Data Quality checks for missing values and duplicates."
+              data-ar="فحص جودة البيانا
